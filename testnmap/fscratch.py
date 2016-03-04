@@ -16,7 +16,7 @@ if __name__ == "__main__":
     for scan_ip in f:
         jobs[]
         p = multiprocessing.Process(target=xscan, args=(scan_ip))
-n
+
 nm.scan(hosts=str(sys.argv[]), arguments=' ,-sV -sS -O -sC -nvvv -Pn ')
 
 for host in nm.all_hosts():
