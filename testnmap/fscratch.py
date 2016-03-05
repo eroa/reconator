@@ -8,7 +8,7 @@ import multiprocessing
 
 def xscan(ipadd):
     nm = nmap.PortScanner()
-    nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oN '/tmp/fscratch'")
+    nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oN '/tmp/fscratch_%s'" % ipadd )
     #nm.command_line()
     print(str(nm.csv()))
 
