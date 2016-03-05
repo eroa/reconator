@@ -1,0 +1,6 @@
+Host: 192.168.1.1 (box)	Status: Up
+Host: 192.168.1.57 (archpi)	Status: Up
+Host: 192.168.1.65 (NEUFTVSTB_MA_AE90)	Status: Up
+Host: 192.168.1.70 (murene)	Status: Up
+Host: 192.168.1.95 (XAVN2001v2)	Status: Up
+Host: 192.168.1.97 (android-7d6f1e556eebf03a)	Status: Up
