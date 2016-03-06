@@ -24,6 +24,9 @@ def xscan(ipadd):
             lport.sort()
             for port in lport:
                 print ('port : %s\tstate : %s' % (port, nm[host][proto][port]['state']))
+                print ('port : %s\tservice : %s' % (port, nm[host][proto][port]['product']))
+                print ('port : %s\tinfo: %s' % (port, nm[host][proto][port]['extrainfo']))
+                print ('port : %s\tversion : %s' % (port, nm[host][proto][port]['version']))
                 # if report:
                 #     (report)
                 # else:  # if __name__=='__main__':
@@ -38,12 +41,3 @@ if __name__ == "__main__":
         p.start()
     f.close()
 
-#nm.scan(hosts=str(sys.argv[]), arguments=' ,-sV -sS -O -sC -nvvv -Pn ')
-
-#    f = open('results/exam/targets.txt', 'r') # CHANGE THIS!! grab the alive hosts from the discovery scan for enum
-#    for scanip in f:
-#        jobs = []
-#        p = multiprocessing.Process(target=nmapScan, args=(scanip,))
-#        jobs.append(p)
-#        p.start()
-#    f.close()
