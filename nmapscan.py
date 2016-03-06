@@ -8,22 +8,22 @@ import multiprocessing
 
 def xscan(ipadd):
     nm = nmap.PortScanner()
-    nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oN '/tmp/fscratch'")
-    #nm.command_line()
+    nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oN '/tmp/fscratch_%s'" % ipadd)
+    print (str(nm.command_line()))
     print(str(nm.csv()))
 
- #    for host in nm.all_hosts():
-        # print('----------------------------------------------------')
-        # print('Host : %s (%s)' % (host, nm[host].hostname()))
-        # print('State : %s' % nm[host].state())
-        # for proto in nm[host].all_protocols():
-            # print('----------')
-            # print('Protocol : %s' % proto)
+    for host in nm.all_hosts():
+        print('----------------------------------------------------')
+        print('Host : %s (%s)' % (host, nm[host].hostname()))
+        print('State : %s' % nm[host].state())
+        for proto in nm[host].all_protocols():
+            print('----------')
+            print('Protocol : %s' % proto)
 
-            # lport = nm[host][proto].keys()
-            # lport.sort()
-            # for port in lport:
-                # print ('port : %s\tstate : %s' % (port, nm[host][proto][port]['state']))
+            lport = nm[host][proto].keys()
+            lport.sort()
+            for port in lport:
+                print ('port : %s\tstate : %s' % (port, nm[host][proto][port]['state']))
                 # if report:
                 #     (report)
                 # else:  # if __name__=='__main__':
