@@ -4,11 +4,10 @@
 import sys
 import nmap
 import multiprocessing
-
-
+nmap.PortScannerHostDict
 def xscan(ipadd):
     nm = nmap.PortScanner()
-    nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oN '/tmp/fscratch_%s'" % ipadd)
+    nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oG '/tmp/fscratch_g_%s' -oN '/tmp/fscratch_%s'" % (ipadd,ipadd))
     print (str(nm.command_line()))
     print(str(nm.csv()))
 
@@ -30,6 +29,7 @@ def xscan(ipadd):
                 # if report:
                 #     (report)
                 # else:  # if __name__=='__main__':
+#TODO:parser reports
 
 if __name__ == "__main__":
     f = open(sys.argv[1], 'r')

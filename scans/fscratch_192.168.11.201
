@@ -1,0 +1,17 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.201
+ 192.168.11.201
+Nmap scan report for 192.168.11.201
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-07 19:37:35 CET for 41s
+Not shown: 996 closed ports
+Reason: 996 conn-refused
+PORT     STATE    SERVICE      REASON      VERSION
+139/tcp  open     netbios-ssn  syn-ack     Microsoft Windows 98 netbios-ssn
+445/tcp  open     microsoft-ds syn-ack     Microsoft Windows XP microsoft-ds
+1025/tcp open     NFS-or-IIS?  syn-ack
+1074/tcp filtered warmspotMgmt no-response
+Service Info: OSs: Windows 98, Windows XP; CPE: cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_xp
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:38:16 2016 -- 1 IP address (1 host up) scanned in 49.27 seconds

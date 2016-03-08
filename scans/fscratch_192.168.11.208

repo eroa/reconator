@@ -1,0 +1,23 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.208
+ 192.168.11.208
+Nmap scan report for 192.168.11.208
+Host is up, received user-set (0.14s latency).
+Scanned at 2016-03-07 19:37:35 CET for 32s
+Not shown: 990 filtered ports
+Reason: 970 no-responses and 20 host-unreaches
+PORT     STATE  SERVICE     REASON       VERSION
+21/tcp   open   ftp         syn-ack      vsftpd 2.0.1
+22/tcp   open   ssh         syn-ack      OpenSSH 3.9p1 (protocol 1.99)
+25/tcp   closed smtp        conn-refused
+80/tcp   open   http        syn-ack      Apache httpd 2.0.52 ((CentOS))
+111/tcp  open   rpcbind     syn-ack      2 (RPC #100000)
+139/tcp  open   netbios-ssn syn-ack      Samba smbd 3.X (workgroup: MYGROUP)
+443/tcp  open   ssl/http    syn-ack      Apache httpd 2.0.52 ((CentOS))
+445/tcp  open   netbios-ssn syn-ack      Samba smbd 3.X (workgroup: MYGROUP)
+631/tcp  open   ipp         syn-ack      CUPS 1.1
+3306/tcp open   mysql       syn-ack      MySQL (unauthorized)
+Service Info: OS: Unix
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:38:07 2016 -- 1 IP address (1 host up) scanned in 40.73 seconds

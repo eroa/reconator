@@ -1,0 +1,14 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.247
+ 192.168.11.247
+Nmap scan report for 192.168.11.247
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-07 19:37:36 CET for 20s
+Not shown: 999 filtered ports
+Reason: 999 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:37:56 2016 -- 1 IP address (1 host up) scanned in 29.80 seconds

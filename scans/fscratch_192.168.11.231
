@@ -1,0 +1,21 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.231
+ 192.168.11.231
+Increasing send delay for 192.168.11.231 from 0 to 5 due to 76 out of 189 dropped probes since last increase.
+Nmap scan report for 192.168.11.231
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-07 19:37:35 CET for 31s
+Not shown: 993 closed ports
+Reason: 993 conn-refused
+PORT     STATE SERVICE       REASON  VERSION
+80/tcp   open  http          syn-ack Microsoft IIS httpd 6.0
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows 2003 or 2008 microsoft-ds
+1025/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1433/tcp open  ms-sql-s      syn-ack Microsoft SQL Server 2000 8.00.766; SP3a
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_server_2003
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:38:06 2016 -- 1 IP address (1 host up) scanned in 39.94 seconds

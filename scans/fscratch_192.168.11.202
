@@ -1,0 +1,16 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.202
+ 192.168.11.202
+Increasing send delay for 192.168.11.202 from 0 to 5 due to 111 out of 276 dropped probes since last increase.
+Increasing send delay for 192.168.11.202 from 5 to 10 due to 11 out of 11 dropped probes since last increase.
+Warning: 192.168.11.202 giving up on port because retransmission cap hit (6).
+Nmap scan report for 192.168.11.202
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-07 19:37:35 CET for 403s
+Not shown: 781 closed ports, 218 filtered ports
+Reason: 781 conn-refused and 218 no-responses
+PORT   STATE SERVICE REASON  VERSION
+80/tcp open  http?   syn-ack
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:44:18 2016 -- 1 IP address (1 host up) scanned in 411.45 seconds

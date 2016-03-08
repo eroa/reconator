@@ -1,0 +1,18 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.244
+ 192.168.11.244
+Warning: 192.168.11.244 giving up on port because retransmission cap hit (6).
+Nmap scan report for 192.168.11.244
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-07 19:37:35 CET for 47s
+Not shown: 996 closed ports
+Reason: 996 conn-refused
+PORT     STATE    SERVICE      REASON      VERSION
+22/tcp   open     ssh          syn-ack     OpenSSH 5.3p1 Debian 3ubuntu7 (Ubuntu Linux; protocol 2.0)
+1971/tcp filtered netop-school no-response
+4899/tcp filtered radmin       no-response
+8000/tcp open     ssl/http     syn-ack     Rocket httpd 1.2.6 (Python 2.6.5)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:38:22 2016 -- 1 IP address (1 host up) scanned in 55.26 seconds

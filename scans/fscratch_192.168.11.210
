@@ -1,0 +1,24 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.210
+ 192.168.11.210
+Increasing send delay for 192.168.11.210 from 0 to 5 due to 11 out of 26 dropped probes since last increase.
+Nmap scan report for 192.168.11.210
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-07 19:37:36 CET for 74s
+Not shown: 990 closed ports
+Reason: 990 conn-refused
+PORT     STATE SERVICE       REASON  VERSION
+80/tcp   open  http          syn-ack Microsoft IIS httpd 6.0
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows 2003 or 2008 microsoft-ds
+1025/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1033/tcp open  netinfo?      syn-ack
+1035/tcp open  msrpc         syn-ack Microsoft Windows RPC
+2522/tcp open  windb?        syn-ack
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+7999/tcp open  irdmi2?       syn-ack
+Service Info: OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_server_2003
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:38:50 2016 -- 1 IP address (1 host up) scanned in 83.95 seconds

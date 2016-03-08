@@ -1,0 +1,32 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.223
+ 192.168.11.223
+Nmap scan report for 192.168.11.223
+Host is up, received user-set (0.13s latency).
+Scanned at 2016-03-07 19:37:35 CET for 157s
+Not shown: 987 closed ports
+Reason: 987 conn-refused
+PORT      STATE SERVICE            REASON  VERSION
+80/tcp    open  http               syn-ack Apache httpd 2.2.14 ((Win32) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l mod_autoindex_color PHP/5.3.1 mod_apreq2-20090110/2.7.1 mod_perl/2.0.4 Perl/v5.10.1)
+135/tcp   open  msrpc              syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn        syn-ack Microsoft Windows 98 netbios-ssn
+443/tcp   open  ssl/http           syn-ack Apache httpd 2.2.14 ((Win32) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l mod_autoindex_color PHP/5.3.1 mod_apreq2-20090110/2.7.1 mod_perl/2.0.4 Perl/v5.10.1)
+445/tcp   open  microsoft-ds       syn-ack (primary domain: WORKGROUP)
+3306/tcp  open  mysql?             syn-ack
+3389/tcp  open  ssl/ms-wbt-server? syn-ack
+49152/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49153/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49154/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49155/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49156/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49157/tcp open  msrpc              syn-ack Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port445-TCP:V=7.01%I=7%D=3/7%Time=56DDCA8A%P=x86_64-unknown-linux-gnu%r
+SF:(SMBProgNeg,6F,"\0\0\0k\xffSMBr\0\0\0\0\x88\x01@\0\0\0\0\0\0\0\0\0\0\0\
+SF:0\0\0@\x06\0\0\x01\0\x11\x07\0\x032\0\x01\0\x04A\0\0\0\0\x01\0\0\0\0\0\
+SF:xfd\xe3\x01\0\xda\xd5/\xb6Wx\xd1\x01\xe0\x01\x08&\x005\xef\xbdQ`\xd4F\x
+SF:efW\0O\0R\0K\0G\0R\0O\0U\0P\0\0\0J\0E\0F\0F\0\0\0");
+Service Info: Host: JEFF; OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:40:12 2016 -- 1 IP address (1 host up) scanned in 165.52 seconds

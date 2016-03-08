@@ -1,0 +1,32 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.221
+ 192.168.11.221
+Increasing send delay for 192.168.11.221 from 0 to 5 due to 67 out of 167 dropped probes since last increase.
+Nmap scan report for 192.168.11.221
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-07 19:37:36 CET for 76s
+Not shown: 988 closed ports
+Reason: 988 conn-refused
+PORT      STATE    SERVICE            REASON      VERSION
+53/tcp    open     domain             syn-ack     Microsoft DNS 6.0.6001
+135/tcp   open     msrpc              syn-ack     Microsoft Windows RPC
+139/tcp   open     netbios-ssn        syn-ack     Microsoft Windows 98 netbios-ssn
+445/tcp   open     microsoft-ds       syn-ack     (primary domain: THINC)
+1309/tcp  filtered jtag-server        no-response
+3389/tcp  open     ssl/ms-wbt-server? syn-ack
+5357/tcp  open     http               syn-ack     Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+49152/tcp open     msrpc              syn-ack     Microsoft Windows RPC
+49153/tcp open     msrpc              syn-ack     Microsoft Windows RPC
+49154/tcp open     msrpc              syn-ack     Microsoft Windows RPC
+49155/tcp open     msrpc              syn-ack     Microsoft Windows RPC
+49160/tcp open     msrpc              syn-ack     Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port445-TCP:V=7.01%I=7%D=3/7%Time=56DDCA89%P=x86_64-unknown-linux-gnu%r
+SF:(SMBProgNeg,69,"\0\0\0e\xffSMBr\0\0\0\0\x88\x01@\0\0\0\0\0\0\0\0\0\0\0\
+SF:0\0\0@\x06\0\0\x01\0\x11\x07\0\x032\0\x01\0\x04A\0\0\0\0\x01\0\0\0\0\0\
+SF:xfd\xe3\x01\0@\xfa\x9d\xb3\x9f\x03\xcf\x01\xe0\x01\x08\x20\0&v\x1e/\x9b
+SF:\xa6\xbduT\0H\0I\0N\0C\0\0\0S\0L\0A\0V\0E\0\0\0");
+Service Info: Host: SLAVE; OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:38:52 2016 -- 1 IP address (1 host up) scanned in 85.37 seconds

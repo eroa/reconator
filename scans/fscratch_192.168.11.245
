@@ -1,0 +1,24 @@
+# Nmap 7.01 scan initiated Mon Mar  7 19:37:27 2016 as: nmap -oX - -sV -sT -T4 -nvvv -Pn -oN /tmp/fscratch_192.168.11.245
+ 192.168.11.245
+Nmap scan report for 192.168.11.245
+Host is up, received user-set (0.13s latency).
+Scanned at 2016-03-07 19:37:36 CET for 59s
+Not shown: 995 filtered ports
+Reason: 995 no-responses
+PORT     STATE SERVICE            REASON  VERSION
+135/tcp  open  msrpc              syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn        syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp  open  microsoft-ds       syn-ack (primary domain: WORKGROUP)
+3389/tcp open  ssl/ms-wbt-server? syn-ack
+8080/tcp open  http               syn-ack Apache Tomcat/Coyote JSP engine 1.1
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port445-TCP:V=7.01%I=7%D=3/7%Time=56DDCA95%P=x86_64-unknown-linux-gnu%r
+SF:(SMBProgNeg,77,"\0\0\0s\xffSMBr\0\0\0\0\x88\x01@\0\0\0\0\0\0\0\0\0\0\0\
+SF:0\0\0@\x06\0\0\x01\0\x11\x07\0\x032\0\x01\0\x04A\0\0\0\0\x01\0\0\0\0\0\
+SF:xfd\xe3\x01\0O\xc0\x11\x8fsx\xd1\x01\xe0\x01\x08\.\0\x80x\xf5\xb1ys\xdd
+SF:\x86W\0O\0R\0K\0G\0R\0O\0U\0P\0\0\0H\0E\0L\0P\0D\0E\0S\0K\0\0\0");
+Service Info: Host: HELPDESK; OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  7 19:38:35 2016 -- 1 IP address (1 host up) scanned in 68.37 seconds
