@@ -4,7 +4,9 @@
 import sys
 import nmap
 import multiprocessing
-nmap.PortScannerHostDict
+#import libnmap
+
+
 def xscan(ipadd):
     nm = nmap.PortScanner()
     nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oG '/tmp/fscratch_g_%s' -oN '/tmp/fscratch_%s'" % (ipadd,ipadd))
