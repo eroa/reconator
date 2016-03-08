@@ -3,7 +3,7 @@ import nmap
 
 nm = nmap.PortScanner()
 #2 = libnmap.
-nm.scan(hosts='127.0.0.1', arguments='-sV -sT -nvvv --open -oN "/tmp/parse-dev"')
+nm.scan(hosts='192.168.1.0/24', arguments='-sV -sT -nvvv --open -oN "/tmp/parse-dev"')
 nm.get_nmap_last_output()
 print(str(nm))
 nm.get_nmap_last_output()
@@ -15,7 +15,7 @@ for host in hosts:
         lport = nm[host][proto].keys()
         lport.sort()
         for port in lport:
-            print('port: %s\tstate : %s\tproto: %s' % (port, nm[host][proto][port]['state'], nm[host][proto][port]['product']))
+            print('host: %s\tport: %s\tstate : %s\tproto: %s' % (nm[host]['addresses'],port, nm[host][proto][port]['state'], nm[host][proto][port]['product']))
 
 
 
