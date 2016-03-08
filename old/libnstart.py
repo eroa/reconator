@@ -34,7 +34,6 @@ def print_scan(nmap_report):
             tmp_host = host.hostnames.pop()
         else:
             tmp_host = host.address
-git clone ssh://root@192.168.1.57:/mnt/deux/workspace/acid-dev
 
         print("Nmap scan report for {0} ({1})".format(
             tmp_host,
