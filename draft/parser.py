@@ -16,6 +16,10 @@ for host in hosts:
         lport.sort()
         for port in lport:
             print('host: %s\tport: %s\tstate : %s\tproto: %s' % (nm[host]['addresses'],port, nm[host][proto][port]['state'], nm[host][proto][port]['product']))
+            if "htttp" in nm[host][proto][port]['product']:
+                print("GREP VICTORY" + str(nm[host][proto](port]['product'])))
+
+
 
 
 
