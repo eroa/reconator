@@ -10,12 +10,12 @@ import multiprocessing
 
 #
 #
-# def multProc(targetin, scanip, port):
-#     jobs = []
-#     p = multiprocessing.Process(target=targetin, args=(scanip,port))
-#     jobs.append(p)
-#     p.start()
-#     return
+def multProc(targetin, scanip, port):
+    jobs = []
+    p = multiprocessing.Process(target=targetin, args=(scanip,port))
+    jobs.append(p)
+    p.start()
+    return
 #
 #
 # def altscan(ip_address, port):
@@ -37,7 +37,8 @@ def xscan(ipadd):
     #m.get_nmap_last_output()
     #rint(nm.csv())
     hosts = nm.all_hosts()
-#   for host in nm[host].all_hosts():
+    serv_dict={}
+    #   for host in nm[host].all_hosts():
     for host in hosts:
         print('----------------------------------------------------')
         print('Host : %s (%s)' % (host, nm[host].hostname()))
@@ -47,6 +48,8 @@ def xscan(ipadd):
             lport.sort()
             for port in lport:
                 print('host: %s\tport: %s\tstate : %s\tproto: %s' % (nm[host]['addresses'],port, nm[host][proto][port]['state'], nm[host][proto][port]['product']))
+                services = nm[host][proto][port]['product']
+
                 # else:  # if __name__=='__main__':
 #TODO:parser reports
 
