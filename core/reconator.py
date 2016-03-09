@@ -39,6 +39,9 @@ def xscan(ipadd):
     hosts = nm.all_hosts()
 #   for host in nm[host].all_hosts():
     for host in hosts:
+        print('----------------------------------------------------')
+        print('Host : %s (%s)' % (host, nm[host].hostname()))
+        print('State : %s' % nm[host].state())
         for proto in nm[host].all_protocols():
             lport = nm[host][proto].keys()
             lport.sort()
