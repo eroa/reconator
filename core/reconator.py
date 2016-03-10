@@ -20,7 +20,7 @@ def multProc(targetin, scanip, port):
 #
 # def altscan(ip_address, port):
 #     print "INFO: Detected DNS on " + ip_address + ":" + port
-#     if port.strip() == "53":
+#     if port.strip() == "53":dz
 #        SCRIPT = "./altscan.py %s" % (ip_address)# execute the python script
 #        subprocess.call(SCRIPT, shell=True)
 #     return

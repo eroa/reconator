@@ -7,4 +7,4 @@ nm.run()
 nmap_report = NmapParser.parse(nm.stdout)
 
 for scanned_hosts in nmap_report.hosts:
-    print scanned_hosts
+    print(scanned_hosts)
