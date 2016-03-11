@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="690cdc85-c41c-4789-b735-6cf0a269e1dd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/reconator.py" afterPath="$PROJECT_DIR$/core/reconator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples_python-nmap.py" afterPath="$PROJECT_DIR$/examples_python-nmap.py" />
     </list>
     <ignored path="reconator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -576,7 +574,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457708706399</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="reconator fonctionnel">
+      <created>1457717713394</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1457717713394</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView">
