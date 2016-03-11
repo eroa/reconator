@@ -18,6 +18,7 @@ def multProc(targetin, scanip, port):
     return
 #
 #
+
 # def altscan(ip_address, port):
 #     print "INFO: Detected DNS on " + ip_address + ":" + port
 #     if port.strip() == "53":dz
