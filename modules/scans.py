@@ -57,7 +57,7 @@ if __name__ == "__main__":
     print " RECONATOR : usage " + sys.argv[0] + "ip_list.txt"
     f =open('sys.argv[1]' 'r')
     for ip in f:
-        report = do_scan(ip, "-sS -sV -sC -O -nvvv --open -Pn ")
+        report = do_scan(ip, "-sT -sV  -nvvv --open -Pn -oA "/tmp/libnmapex"")
     if report:
         print_scan(report)
     else:

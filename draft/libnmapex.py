@@ -9,7 +9,7 @@ from libnmap import NmapProcess
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets, options):
     parsed = None
-    nmproc = NmapProcess(targets, options)
+    nmproc = NmapProcess(targets, options,safe_mode=False)
     rc = nmproc.run()
     if rc != 0:
         print("nmap scan failed: {0}".format(nmproc.stderr))
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     print " RECONATOR : usage " + sys.argv[0] + "ip_list.txt"
     f =open('sys.argv[1]' 'r')
     for ip in f:
-        report = do_scan(ip, "-sS -sV -sC -O -nvvv --open -Pn ")
+        report = do_scan(ip, "-sT -sV  -nvvv --open -Pn -oA '/tmp/libnmapex'")
     if report:
         print_scan(report)
     else:

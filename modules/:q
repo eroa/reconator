@@ -1,0 +1,45 @@
+" Press ? for help
+
+>----------Bookmarks----------
+>oscp /home/toxic/oscp/
+>scripts /home/toxic/scripts/
+>toxic /home/toxic/
+>workspace <e/toxic/workspace/
+
+.. (up a dir)
+</toxic/workspace/reconator/
+▸ .idea/
+▸ core/
+▾ draft/
+    libparser.py
+    parser.py
+    startnmap.py
+▸ examples/
+▸ hooks/
+▸ info/
+▸ inspiration/
+▸ modules/
+▸ old/
+▸ scans/
+▸ testnmap/
+  a.txt
+  config
+  description
+  examples_python-nmap.py
+  HEAD
+  home_up.txt
+  ipyrange_stsvt5
+  list.txt
+  nm.csv
+  pip-selfcheck.json
+  rangesvstt5pn
+  reconator.nja
+  scan.gnmap
+  scan.nmap
+  scan.xml
+  sSsVsCOopen.gnmap
+  sSsVsCOopen.nmap
+  sSsVsCOopen.xml
+  up.txt
+  virtualenvwrapper.sh*
+  z.csv
