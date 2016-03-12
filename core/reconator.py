@@ -30,7 +30,8 @@ def multProc(targetin, scanip, port):
 
 def xscan(ipadd):
     nm = nmap.PortScanner()
-    nm.scan(hosts=str(ipadd), arguments="-sV -sT -T4 -nvvv -Pn -oG '/tmp/fscratch_g_%s' -oN '/tmp/fscratch_%s'" % (ipadd,ipadd))
+    nm.scan(hosts=str(ipadd),
+            arguments="-sV -sT -T4 -nvvv -Pn -oG '/tmp/reconator_g_%s' -oN '/tmp/reconator_%s'" % (ipadd, ipadd))
     print (str(nm.command_line()))
     print(str(nm.csv()))
     nm.get_nmap_last_output()
@@ -52,6 +53,7 @@ def xscan(ipadd):
                 if "htttp" in nm[host][proto][port]['product']:
                     print("GREP VICTORY + %s" % str(nm[host][proto][port]['product']))
                 services = nm[host][proto][port]['product']
+                if htt
 
                 # else:  # if __name__=='__main__':
 #TODO:parser reports
