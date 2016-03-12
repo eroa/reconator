@@ -1,0 +1,613 @@
+# Nmap 7.01 scan initiated Sat Mar 12 05:16:11 2016 as: nmap -oX - -sV -sT -T5 -Pn --open -nvv -oN rangesvstt5pn 192.168.11.200-255
+Warning: 192.168.11.230 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.249 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.238 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.234 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.223 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.242 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.231 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.244 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.215 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.236 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.216 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.205 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.219 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.206 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.229 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.214 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.201 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.237 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.241 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.220 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.209 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.222 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.210 giving up on port because retransmission cap hit (2).
+Warning: 192.168.11.202 giving up on port because retransmission cap hit (2).
+Increasing send delay for 192.168.11.202 from 0 to 5 due to 109 out of 272 dropped probes since last increase.
+Warning: 192.168.11.227 giving up on port because retransmission cap hit (2).
+Nmap scan report for 192.168.11.201
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 971s
+Not shown: 993 closed ports, 2 filtered ports
+Reason: 993 conn-refused and 2 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows XP microsoft-ds
+1025/tcp open  msrpc         syn-ack Microsoft Windows RPC
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OSs: Windows, Windows 98, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_xp
+
+Nmap scan report for 192.168.11.202
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 985s
+Not shown: 833 filtered ports, 166 closed ports
+Reason: 833 no-responses and 166 conn-refused
+PORT   STATE SERVICE    REASON  VERSION
+80/tcp open  tcpwrapped syn-ack
+
+Nmap scan report for 192.168.11.203
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 986s
+Not shown: 997 filtered ports
+Reason: 997 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+21/tcp   open  ftp           syn-ack Microsoft ftpd
+80/tcp   open  http          syn-ack Microsoft IIS httpd 5.1
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.11.204
+Host is up, received user-set (0.11s latency).
+Scanned at 2016-03-12 05:16:11 CET for 984s
+Not shown: 997 filtered ports
+Reason: 997 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+21/tcp   open  ftp           syn-ack Microsoft ftpd
+80/tcp   open  http          syn-ack Microsoft IIS httpd 5.1
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.11.205
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 989s
+Not shown: 977 closed ports, 8 filtered ports
+Reason: 977 conn-refused and 8 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+21/tcp   open  ftp           syn-ack Microsoft ftpd 5.0
+80/tcp   open  http          syn-ack Microsoft IIS httpd 5.0
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+443/tcp  open  https?        syn-ack
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows 2000 microsoft-ds
+1026/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1029/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1030/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1521/tcp open  oracle-tns    syn-ack Oracle TNS Listener 9.2.0.1.0 (for 32-bit Windows)
+2030/tcp open  oracle-mts    syn-ack Oracle MTS Recovery Service
+3372/tcp open  msdtc         syn-ack Microsoft Distributed Transaction Coordinator
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+4443/tcp open  ssl/http      syn-ack Oracle HTTP Server Powered by Apache 1.3.22 (mod_plsql/3.0.9.8.3b mod_ssl/2.8.5 OpenSSL/0.9.6b mod_fastcgi/2.2.12 mod_oprocmgr/1.0 mod_perl/1.25)
+7778/tcp open  http          syn-ack Oracle HTTP Server Powered by Apache 1.3.22 (mod_plsql/3.0.9.8.3b mod_ssl/2.8.5 OpenSSL/0.9.6b mod_fastcgi/2.2.12 mod_oprocmgr/1.0 mod_perl/1.25)
+Service Info: OSs: Windows, Windows 98, Windows 2000; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_2000
+
+Nmap scan report for 192.168.11.206
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 990s
+Not shown: 981 closed ports, 1 filtered port
+Reason: 981 conn-refused and 1 no-response
+PORT     STATE SERVICE       REASON  VERSION
+21/tcp   open  ftp           syn-ack Microsoft ftpd 5.0
+80/tcp   open  http          syn-ack Microsoft IIS httpd 5.0
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+443/tcp  open  https?        syn-ack
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows 2000 microsoft-ds
+1026/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1029/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1030/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1036/tcp open  oracle        syn-ack Oracle Database
+1521/tcp open  oracle-tns    syn-ack Oracle TNS Listener 9.2.0.1.0 (for 32-bit Windows)
+2030/tcp open  oracle-mts    syn-ack Oracle MTS Recovery Service
+2100/tcp open  ftp           syn-ack Oracle Enterprise XML DB ftpd 9.2.0.1.0
+3372/tcp open  msdtc         syn-ack Microsoft Distributed Transaction Coordinator
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+4443/tcp open  ssl/http      syn-ack Oracle HTTP Server Powered by Apache 1.3.22 (mod_plsql/3.0.9.8.3b mod_ssl/2.8.5 OpenSSL/0.9.6b mod_fastcgi/2.2.12 mod_oprocmgr/1.0 mod_perl/1.25)
+7778/tcp open  http          syn-ack Oracle HTTP Server Powered by Apache 1.3.22 (mod_plsql/3.0.9.8.3b mod_ssl/2.8.5 OpenSSL/0.9.6b mod_fastcgi/2.2.12 mod_oprocmgr/1.0 mod_perl/1.25)
+8080/tcp open  http          syn-ack Oracle XML DB Enterprise Edition httpd 9.2.0.1.0 (Oracle9i Enterprise Edition Release)
+Service Info: Host: oracle2; OSs: Windows, Windows 98, Windows 2000; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_2000
+
+Nmap scan report for 192.168.11.207
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 974s
+Not shown: 999 filtered ports
+Reason: 999 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.11.208
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 990 filtered ports, 1 closed port
+Reason: 579 host-unreaches, 411 no-responses and 1 conn-refused
+PORT     STATE SERVICE     REASON  VERSION
+21/tcp   open  ftp         syn-ack vsftpd 2.0.1
+22/tcp   open  ssh         syn-ack OpenSSH 3.9p1 (protocol 1.99)
+80/tcp   open  http        syn-ack Apache httpd 2.0.52 ((CentOS))
+111/tcp  open  rpcbind     syn-ack 2 (RPC #100000)
+139/tcp  open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: MYGROUP)
+443/tcp  open  ssl/http    syn-ack Apache httpd 2.0.52 ((CentOS))
+445/tcp  open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: MYGROUP)
+631/tcp  open  ipp         syn-ack CUPS 1.1
+3306/tcp open  mysql       syn-ack MySQL (unauthorized)
+Service Info: OS: Unix
+
+Nmap scan report for 192.168.11.209
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 991 closed ports, 4 filtered ports
+Reason: 991 conn-refused and 4 no-responses
+PORT     STATE SERVICE REASON  VERSION
+22/tcp   open  ssh     syn-ack SunSSH 1.1.5 (protocol 2.0)
+80/tcp   open  http    syn-ack Apache httpd 1.3.41 ((Unix) mod_perl/1.31)
+111/tcp  open  rpcbind syn-ack 2-4 (RPC #100000)
+8009/tcp open  ajp13   syn-ack Apache Jserv (Protocol v1.3)
+8080/tcp open  http    syn-ack Apache Tomcat/Coyote JSP engine 1.1
+
+Nmap scan report for 192.168.11.210
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 988 closed ports, 1 filtered port
+Reason: 988 conn-refused and 1 no-response
+PORT     STATE SERVICE       REASON  VERSION
+23/tcp   open  telnet        syn-ack Microsoft Windows XP telnetd (no more connections allowed)
+80/tcp   open  http          syn-ack Microsoft IIS httpd 6.0
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows 2003 or 2008 microsoft-ds
+1025/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1033/tcp open  netinfo?      syn-ack
+1037/tcp open  msrpc         syn-ack Microsoft Windows RPC
+2522/tcp open  windb?        syn-ack
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+7999/tcp open  irdmi2?       syn-ack
+Service Info: OSs: Windows XP, Windows, Windows 98; CPE: cpe:/o:microsoft:windows_xp, cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_server_2003
+
+Nmap scan report for 192.168.11.214
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 976s
+Not shown: 995 closed ports, 4 filtered ports
+Reason: 995 conn-refused and 4 no-responses
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 6.6.1p1 Ubuntu 2ubuntu2 (Ubuntu Linux; protocol 2.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.215
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 989 closed ports, 2 filtered ports
+Reason: 989 conn-refused and 2 no-responses
+PORT      STATE SERVICE     REASON  VERSION
+21/tcp    open  ftp         syn-ack vsftpd 1.1.3
+22/tcp    open  ssh         syn-ack OpenSSH 3.5p1 (protocol 1.99)
+25/tcp    open  smtp        syn-ack Sendmail 8.12.8/8.12.8
+111/tcp   open  rpcbind     syn-ack 2 (RPC #100000)
+139/tcp   open  netbios-ssn syn-ack Samba smbd (workgroup: MYGROUP)
+143/tcp   open  imap        syn-ack UW imapd 2001.315rh
+199/tcp   open  smux        syn-ack Linux SNMP multiplexer
+3306/tcp  open  mysql       syn-ack MySQL (unauthorized)
+32768/tcp open  status      syn-ack 1 (RPC #100024)
+Service Info: Host: redhat.acme.com; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.216
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 991 closed ports, 3 filtered ports
+Reason: 991 conn-refused and 3 no-responses
+PORT     STATE SERVICE    REASON  VERSION
+21/tcp   open  ftp?       syn-ack
+22/tcp   open  ssh        syn-ack OpenSSH 5.8p2_hpn13v11 (FreeBSD 20110503; protocol 2.0)
+80/tcp   open  http       syn-ack Apache httpd 2.4.6 ((FreeBSD) PHP/5.4.23)
+110/tcp  open  tcpwrapped syn-ack
+143/tcp  open  tcpwrapped syn-ack
+3306/tcp open  mysql      syn-ack MySQL (unauthorized)
+Service Info: OS: FreeBSD; CPE: cpe:/o:freebsd:freebsd
+
+Nmap scan report for 192.168.11.218
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 978s
+Not shown: 997 filtered ports
+Reason: 997 no-responses
+PORT    STATE SERVICE      REASON  VERSION
+135/tcp open  msrpc        syn-ack Microsoft Windows RPC
+139/tcp open  netbios-ssn  syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp open  microsoft-ds syn-ack Microsoft Windows 10 microsoft-ds
+Service Info: OSs: Windows, Windows 98, Windows 10; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_10
+
+Nmap scan report for 192.168.11.219
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 993 closed ports, 3 filtered ports
+Reason: 993 conn-refused and 3 no-responses
+PORT    STATE SERVICE     REASON  VERSION
+22/tcp  open  ssh         syn-ack OpenSSH 6.6.1p1 Ubuntu 2ubuntu2 (Ubuntu Linux; protocol 2.0)
+80/tcp  open  http        syn-ack Apache httpd 2.4.7 ((Ubuntu))
+139/tcp open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: CARRIEKIT)
+445/tcp open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: CARRIEKIT)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.220
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 976 closed ports, 5 filtered ports
+Reason: 976 conn-refused and 5 no-responses
+PORT      STATE SERVICE            REASON  VERSION
+21/tcp    open  ftp                syn-ack FileZilla ftpd 0.9.34 beta
+53/tcp    open  domain             syn-ack Microsoft DNS 6.1.7601
+88/tcp    open  kerberos-sec       syn-ack Windows 2003 Kerberos (server time: 2013-12-28 07:37:26Z)
+135/tcp   open  msrpc              syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn        syn-ack Microsoft Windows 98 netbios-ssn
+389/tcp   open  ldap               syn-ack
+445/tcp   open  microsoft-ds       syn-ack (primary domain: THINC)
+464/tcp   open  kpasswd5?          syn-ack
+593/tcp   open  ncacn_http         syn-ack Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped         syn-ack
+3268/tcp  open  ldap               syn-ack
+3269/tcp  open  tcpwrapped         syn-ack
+3389/tcp  open  ssl/ms-wbt-server? syn-ack
+49152/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49153/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49154/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49155/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49157/tcp open  ncacn_http         syn-ack Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  msrpc              syn-ack Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port445-TCP:V=7.01%I=7%D=3/12%Time=56E39B25%P=x86_64-unknown-linux-gnu%
+SF:r(SMBProgNeg,6B,"\0\0\0g\xffSMBr\0\0\0\0\x88\x01@\0\0\0\0\0\0\0\0\0\0\0
+SF:\0\0\0@\x06\0\0\x01\0\x11\x07\0\x0f2\0\x01\0\x04A\0\0\0\0\x01\0\0\0\0\0
+SF:\xfc\xf3\x01\0\x8d\x80\x87\xa7\x9f\x03\xcf\x01\xe0\x01\x08\"\0\xe2\"l\x
+SF:da\xac\[\x85zT\0H\0I\0N\0C\0\0\0M\0A\0S\0T\0E\0R\0\0\0");
+Service Info: Host: MASTER; OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_server_2003, cpe:/o:microsoft:windows_98
+
+Nmap scan report for 192.168.11.221
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 995 filtered ports
+Reason: 995 no-responses
+PORT      STATE SERVICE            REASON  VERSION
+53/tcp    open  domain             syn-ack Microsoft DNS 6.0.6001
+135/tcp   open  msrpc              syn-ack Microsoft Windows RPC
+3389/tcp  open  ssl/ms-wbt-server? syn-ack
+5357/tcp  open  http               syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+49160/tcp open  msrpc              syn-ack Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.11.222
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 988 closed ports, 1 filtered port
+Reason: 988 conn-refused and 1 no-response
+PORT      STATE SERVICE     REASON  VERSION
+21/tcp    open  ftp?        syn-ack
+22/tcp    open  ssh         syn-ack OpenSSH 3.1p1 (protocol 1.99)
+23/tcp    open  telnet      syn-ack Linux telnetd
+25/tcp    open  smtp?       syn-ack
+80/tcp    open  http        syn-ack Apache httpd 1.3.23 ((Unix)  (Red-Hat/Linux) mod_python/2.7.6 Python/1.5.2 mod_ssl/2.8.7 OpenSSL/0.9.6b DAV/1.0.3 PHP/4.1.2 mod_perl/1.26 mod_throttle/3.1.2)
+111/tcp   open  rpcbind     syn-ack 2 (RPC #100000)
+139/tcp   open  netbios-ssn syn-ack Samba smbd (workgroup: MYGROUP)
+199/tcp   open  smux        syn-ack Linux SNMP multiplexer
+443/tcp   open  ssl/http    syn-ack Apache httpd 1.3.23 ((Unix)  (Red-Hat/Linux) mod_python/2.7.6 Python/1.5.2 mod_ssl/2.8.7 OpenSSL/0.9.6b DAV/1.0.3 PHP/4.1.2 mod_perl/1.26 mod_throttle/3.1.2)
+995/tcp   open  ssl/pop3    syn-ack ipop3d 2001.78rh
+32768/tcp open  status      syn-ack 1 (RPC #100024)
+Service Info: Host: mailman; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.223
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 985 closed ports, 2 filtered ports
+Reason: 985 conn-refused and 2 no-responses
+PORT      STATE SERVICE            REASON  VERSION
+80/tcp    open  http               syn-ack Apache httpd 2.2.14 ((Win32) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l mod_autoindex_color PHP/5.3.1 mod_apreq2-20090110/2.7.1 mod_perl/2.0.4 Perl/v5.10.1)
+135/tcp   open  msrpc              syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn        syn-ack Microsoft Windows 98 netbios-ssn
+443/tcp   open  ssl/http           syn-ack Apache httpd 2.2.14 ((Win32) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l mod_autoindex_color PHP/5.3.1 mod_apreq2-20090110/2.7.1 mod_perl/2.0.4 Perl/v5.10.1)
+445/tcp   open  microsoft-ds       syn-ack (primary domain: WORKGROUP)
+3306/tcp  open  mysql?             syn-ack
+3389/tcp  open  ssl/ms-wbt-server? syn-ack
+49152/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49153/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49154/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49155/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49156/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49157/tcp open  msrpc              syn-ack Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port445-TCP:V=7.01%I=7%D=3/12%Time=56E39B2E%P=x86_64-unknown-linux-gnu%
+SF:r(SMBProgNeg,6F,"\0\0\0k\xffSMBr\0\0\0\0\x88\x01@\0\0\0\0\0\0\0\0\0\0\0
+SF:\0\0\0@\x06\0\0\x01\0\x11\x07\0\x032\0\x01\0\x04A\0\0\0\0\x01\0\0\0\0\0
+SF:\xfd\xe3\x01\0\x9e\x19\xa9\0\xcf{\xd1\x01\xe0\x01\x08&\0\x92j\x01na\xaa
+SF:\xcf\xbfW\0O\0R\0K\0G\0R\0O\0U\0P\0\0\0J\0E\0F\0F\0\0\0");
+Service Info: Host: JEFF; OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98
+
+Nmap scan report for 192.168.11.224
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 992 closed ports
+Reason: 992 conn-refused
+PORT    STATE SERVICE     REASON  VERSION
+22/tcp  open  ssh         syn-ack OpenSSH 4.6p1 Debian 5build1 (protocol 2.0)
+80/tcp  open  http        syn-ack Apache httpd 2.2.4 ((Ubuntu) PHP/5.2.3-1ubuntu6)
+110/tcp open  pop3        syn-ack Dovecot pop3d
+139/tcp open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: MSHOME)
+143/tcp open  imap        syn-ack Dovecot imapd
+445/tcp open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: MSHOME)
+993/tcp open  ssl/imap    syn-ack Dovecot imapd
+995/tcp open  ssl/pop3    syn-ack Dovecot pop3d
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.225
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 983s
+Not shown: 999 filtered ports
+Reason: 999 no-responses
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port21-TCP:V=7.01%I=7%D=3/12%Time=56E39B30%P=x86_64-unknown-linux-gnu%r
+SF:(NULL,20,"220\x20Femitter\x20FTP\x20Server\x20ready\.\r\n")%r(GenericLi
+SF:nes,64,"220\x20Femitter\x20FTP\x20Server\x20ready\.\r\n500\x20'\r':\x20
+SF:command\x20not\x20understood\.\r\n500\x20'\r':\x20command\x20not\x20und
+SF:erstood\.\r\n")%r(Help,45,"220\x20Femitter\x20FTP\x20Server\x20ready\.\
+SF:r\n500\x20'HELP':\x20command\x20not\x20understood\.\r\n")%r(SMBProgNeg,
+SF:20,"220\x20Femitter\x20FTP\x20Server\x20ready\.\r\n");
+
+Nmap scan report for 192.168.11.226
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 983s
+Not shown: 998 filtered ports
+Reason: 998 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+21/tcp   open  ftp           syn-ack GuildFTPd
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.11.227
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 983 closed ports, 4 filtered ports
+Reason: 983 conn-refused and 4 no-responses
+PORT     STATE SERVICE      REASON  VERSION
+21/tcp   open  ftp          syn-ack Microsoft ftpd 5.0
+25/tcp   open  smtp         syn-ack Microsoft ESMTP 5.0.2195.5329
+80/tcp   open  http         syn-ack Microsoft IIS httpd 5.0
+135/tcp  open  msrpc        syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn  syn-ack Microsoft Windows 98 netbios-ssn
+443/tcp  open  https?       syn-ack
+445/tcp  open  microsoft-ds syn-ack Microsoft Windows 2000 microsoft-ds
+1025/tcp open  msrpc        syn-ack Microsoft Windows RPC
+1026/tcp open  msrpc        syn-ack Microsoft Windows RPC
+1028/tcp open  msrpc        syn-ack Microsoft Windows RPC
+3372/tcp open  msdtc        syn-ack Microsoft Distributed Transaction Coordinator
+5800/tcp open  vnc-http     syn-ack RealVNC 4.0 (resolution: 400x250; VNC TCP port: 5900)
+5900/tcp open  vnc          syn-ack VNC (protocol 3.3; Locked out)
+Service Info: Host: mail.barak.net.il; OSs: Windows, Windows 98, Windows 2000; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_2000
+
+Nmap scan report for 192.168.11.229
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 986 closed ports, 5 filtered ports
+Reason: 986 conn-refused and 5 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+25/tcp   open  smtp          syn-ack hMailServer smtpd
+80/tcp   open  http          syn-ack Microsoft IIS httpd 6.0
+110/tcp  open  pop3          syn-ack hMailServer pop3d
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+143/tcp  open  imap          syn-ack hMailServer imapd
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows 2003 or 2008 microsoft-ds
+1027/tcp open  msrpc         syn-ack Microsoft Windows RPC
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: Host: THINCMAIL; OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_server_2003
+
+Nmap scan report for 192.168.11.230
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 989s
+Not shown: 947 closed ports, 45 filtered ports
+Reason: 947 conn-refused and 45 no-responses
+PORT      STATE SERVICE            REASON  VERSION
+135/tcp   open  msrpc              syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn        syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp   open  microsoft-ds       syn-ack Microsoft Windows 10 microsoft-ds
+3389/tcp  open  ssl/ms-wbt-server? syn-ack
+49154/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49155/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49158/tcp open  msrpc              syn-ack Microsoft Windows RPC
+49160/tcp open  msrpc              syn-ack Microsoft Windows RPC
+Service Info: OSs: Windows, Windows 98, Windows 10; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_10
+
+Nmap scan report for 192.168.11.231
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 987 closed ports, 6 filtered ports
+Reason: 987 conn-refused and 6 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+80/tcp   open  http          syn-ack Microsoft IIS httpd 6.0
+135/tcp  open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp  open  microsoft-ds  syn-ack Microsoft Windows 2003 or 2008 microsoft-ds
+1025/tcp open  msrpc         syn-ack Microsoft Windows RPC
+1433/tcp open  ms-sql-s      syn-ack Microsoft SQL Server 2000 8.00.766; SP3a
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98, cpe:/o:microsoft:windows_server_2003
+
+Nmap scan report for 192.168.11.234
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 990s
+Not shown: 994 closed ports, 4 filtered ports
+Reason: 994 conn-refused and 4 no-responses
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 5.3p1 Debian 3ubuntu3 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    syn-ack Apache httpd 2.2.14 ((Ubuntu))
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.235
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 990s
+Not shown: 997 filtered ports, 1 closed port
+Reason: 594 host-unreaches, 403 no-responses and 1 conn-refused
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 4.3 (protocol 2.0)
+80/tcp open  http    syn-ack Apache httpd 2.2.3 ((CentOS))
+
+Nmap scan report for 192.168.11.236
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 988s
+Not shown: 990 closed ports, 6 filtered ports
+Reason: 990 conn-refused and 6 no-responses
+PORT    STATE SERVICE     REASON  VERSION
+22/tcp  open  ssh         syn-ack OpenSSH 4.3p2 Debian 9 (protocol 2.0)
+113/tcp open  ident       syn-ack
+139/tcp open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: BOB)
+445/tcp open  netbios-ssn syn-ack Samba smbd 3.X (workgroup: BOB)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.237
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 988 closed ports, 1 filtered port
+Reason: 988 conn-refused and 1 no-response
+PORT     STATE SERVICE    REASON  VERSION
+22/tcp   open  ssh        syn-ack OpenSSH 4.3 (protocol 2.0)
+25/tcp   open  smtp       syn-ack Postfix smtpd
+80/tcp   open  http       syn-ack Apache httpd 2.2.3
+110/tcp  open  pop3       syn-ack Cyrus pop3d 2.3.7-Invoca-RPM-2.3.7-7.el5_6.4
+111/tcp  open  rpcbind    syn-ack 2 (RPC #100000)
+143/tcp  open  imap       syn-ack Cyrus imapd 2.3.7-Invoca-RPM-2.3.7-7.el5_6.4
+443/tcp  open  ssl/http   syn-ack Apache httpd 2.2.3 ((CentOS))
+993/tcp  open  ssl/imap   syn-ack Cyrus imapd
+995/tcp  open  pop3       syn-ack Cyrus pop3d
+3306/tcp open  mysql      syn-ack MySQL (unauthorized)
+4445/tcp open  upnotifyp? syn-ack
+Service Info: Hosts:  SIPSERVER.localdomain, 127.0.0.1, example.com
+
+Nmap scan report for 192.168.11.238
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 994 closed ports, 2 filtered ports
+Reason: 994 conn-refused and 2 no-responses
+PORT    STATE SERVICE  REASON  VERSION
+22/tcp  open  ssh      syn-ack OpenSSH 6.0p1 Debian 4 (protocol 2.0)
+80/tcp  open  http     syn-ack Apache httpd 2.2.22 ((Debian))
+111/tcp open  rpcbind  syn-ack 2-4 (RPC #100000)
+443/tcp open  ssl/http syn-ack Apache httpd 2.2.22 ((Debian))
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.239
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 999 filtered ports
+Reason: 999 no-responses
+PORT   STATE SERVICE REASON  VERSION
+80/tcp open  http    syn-ack Apache httpd 2.2.17 ((Win32) mod_apreq2-20090110/2.7.1 mod_perl/2.0.4 Perl/v5.12.3)
+
+Nmap scan report for 192.168.11.241
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 1021s
+Not shown: 991 closed ports, 6 filtered ports
+Reason: 991 conn-refused and 6 no-responses
+PORT      STATE SERVICE REASON  VERSION
+22/tcp    open  ssh     syn-ack OpenSSH 4.0 (protocol 2.0)
+111/tcp   open  rpcbind syn-ack 2 (RPC #100000)
+10000/tcp open  http    syn-ack MiniServ 0.01 (Webmin httpd)
+
+Nmap scan report for 192.168.11.242
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 1021s
+Not shown: 996 closed ports, 1 filtered port
+Reason: 996 conn-refused and 1 no-response
+PORT      STATE SERVICE REASON  VERSION
+22/tcp    open  ssh     syn-ack OpenSSH 4.0 (protocol 2.0)
+111/tcp   open  rpcbind syn-ack 2 (RPC #100000)
+10000/tcp open  http    syn-ack MiniServ 0.01 (Webmin httpd)
+
+Nmap scan report for 192.168.11.244
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 995 closed ports, 3 filtered ports
+Reason: 995 conn-refused and 3 no-responses
+PORT     STATE SERVICE  REASON  VERSION
+22/tcp   open  ssh      syn-ack OpenSSH 5.3p1 Debian 3ubuntu7 (Ubuntu Linux; protocol 2.0)
+8000/tcp open  ssl/http syn-ack Rocket httpd 1.2.6 (Python 2.6.5)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.245
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 992s
+Not shown: 995 filtered ports
+Reason: 995 no-responses
+PORT     STATE SERVICE            REASON  VERSION
+135/tcp  open  msrpc              syn-ack Microsoft Windows RPC
+139/tcp  open  netbios-ssn        syn-ack Microsoft Windows 98 netbios-ssn
+445/tcp  open  microsoft-ds       syn-ack (primary domain: WORKGROUP)
+3389/tcp open  ssl/ms-wbt-server? syn-ack
+8080/tcp open  http               syn-ack Apache Tomcat/Coyote JSP engine 1.1
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port445-TCP:V=7.01%I=7%D=3/12%Time=56E39B5B%P=x86_64-unknown-linux-gnu%
+SF:r(SMBProgNeg,77,"\0\0\0s\xffSMBr\0\0\0\0\x88\x01@\0\0\0\0\0\0\0\0\0\0\0
+SF:\0\0\0@\x06\0\0\x01\0\x11\x07\0\x032\0\x01\0\x04A\0\0\0\0\x01\0\0\0\0\0
+SF:\xfd\xe3\x01\0\x20\xd3\xcd\xe2\xea{\xd1\x01\xe0\x01\x08\.\0r\x8f\xb4\x8
+SF:aH;:\x16W\0O\0R\0K\0G\0R\0O\0U\0P\0\0\0H\0E\0L\0P\0D\0E\0S\0K\0\0\0");
+Service Info: Host: HELPDESK; OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98
+
+Nmap scan report for 192.168.11.247
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 989s
+Not shown: 999 filtered ports
+Reason: 999 no-responses
+PORT     STATE SERVICE       REASON  VERSION
+3389/tcp open  ms-wbt-server syn-ack Microsoft Terminal Service
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.11.249
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 989s
+Not shown: 993 closed ports, 5 filtered ports
+Reason: 993 conn-refused and 5 no-responses
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack ProFTPD 1.3.3a
+22/tcp open  ssh     syn-ack OpenSSH 5.5p1 Debian 6 (protocol 2.0)
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.250
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 990s
+Not shown: 996 filtered ports
+Reason: 996 no-responses
+PORT      STATE SERVICE     REASON  VERSION
+80/tcp    open  http        syn-ack Microsoft IIS httpd 8.5
+135/tcp   open  msrpc       syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn syn-ack Microsoft Windows 98 netbios-ssn
+49155/tcp open  msrpc       syn-ack Microsoft Windows RPC
+Service Info: OSs: Windows, Windows 98; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_98
+
+Nmap scan report for 192.168.11.251
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 998 filtered ports
+Reason: 998 no-responses
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 5.1p1 Debian 5ubuntu1 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    syn-ack Apache httpd 2.2.11 ((Ubuntu) PHP/5.2.6-3ubuntu4.4 with Suhosin-Patch)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 192.168.11.252
+Host is up, received user-set (0.12s latency).
+Scanned at 2016-03-12 05:16:11 CET for 991s
+Not shown: 999 filtered ports
+Reason: 999 no-responses
+PORT     STATE SERVICE REASON  VERSION
+8000/tcp open  http    syn-ack Apache httpd 2.2.3 ((CentOS))
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Mar 12 05:33:12 2016 -- 56 IP addresses (56 hosts up) scanned in 1021.09 seconds
