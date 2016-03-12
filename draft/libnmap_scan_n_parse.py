@@ -54,7 +54,7 @@ def print_scan(nmap_report):
 
 
 if __name__ == "__main__":
-    print " RECONATOR : usage " + sys.argv[0] + "ip_list.txt"
+    print(" RECONATOR : usage " + sys.argv[0] + "ip_list.txt")
     f =open('sys.argv[1]' 'r')
     for ip in f:
         report = do_scan(ip, "-sT -sV  -nvvv --open -Pn -oA '/tmp/libnmapex'")
