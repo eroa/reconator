@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import nmap
+import sys
+import multiprocessing
 #import libnmap
-import nmmapparser
+#import nmmapparser
 import nmap_parser
 #from libnmap import NmapParser, NmapParserException
 #from libnmap import NmapProcess
@@ -13,16 +15,19 @@ import re
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets, options):
     parsed = None
-    nm = nm.PortScanner()
-    nm.scan(targets, options,safe_mode=False)
+    nm = nmap.PortScanner()
+    nm.scan(targets, options)
+    print('----------------------------------------------------')
+    print(nm.csv())
+    print('----------------------------------------------------')
     #if rc != 0:
     #    print("nmap scan failed: {0}".format(nmproc.stderr))
     print(nm.csv())
 
-    try:
-        parsed = nmap_parser.
-    except NmapParserException as e:
-        print("Exception raised while parsing scan: {0}".format(e.msg))
+   # try:
+    #arsed = nmap_parser.parser[nm.csv()]
+    # except NmapParserException as e:
+    #     print("Exception raised while parsing scan: {0}".format(e.msg))
 
     return parsed
 
@@ -70,16 +75,19 @@ def print_scan(nmap_report):
 
 
 if __name__ == "__main__":
-    print(" RECONATOR : usage " + sys.argv[0] + "ip_list.txt")
-    f =open('sys.argv[1]' 'r')
-    for ip in f:
-        report = do_scan(ip, "-sT -sV  -nvvv --open -Pn -oA '/tmp/testreconator_%s'" % (ip))
-        r = re.compile('/tmp/reconator_2...xml')
-        e = open(r, 'r')
-        parser(e)
-    if report:
-        print_scan(report)
-    else:
-        print("No results returned")
+ #   print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
 
+    f =open(sys.argv[1],   'r')
+    for ip in f:
+        options = '-sV -sT -vvv -Pn -oA "/tmp/reconator_%s"' %  (ip)
+        report = multiprocessing.Process(target=do_scan, args=ip)
+
+     #   r = re.compile('/tmp/reconator_2...xml')
+      #  e = open(r, 'r')
+       # parser(e)
+#    if report:
+    #     print_scan(report)
+    # else:
+    #     print("No results returned")
+    #
 

@@ -9,6 +9,7 @@ from libnmap import NmapProcess
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets, options):
     parsed = None
+
     nmproc = NmapProcess(targets, options)
     rc = nmproc.run()
     if rc != 0:
