@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import nmap
-import libnmap
-from libnmap import NmapParser, NmapParserException
-from libnmap import NmapProcess
+#import libnmap
+import nmmapparser
+import nmap_parser
+#from libnmap import NmapParser, NmapParserException
+#from libnmap import NmapProcess
 import re
 
 
@@ -11,14 +13,14 @@ import re
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets, options):
     parsed = None
-    nmproc = NmapProcess(targets, options,safe_mode=False)
-    rc = nmproc.run()
-    if rc != 0:
-        print("nmap scan failed: {0}".format(nmproc.stderr))
-    print(type(nmproc.stdout))
+    nm = nm.PortScanner()
+    nm.scan(targets, options,safe_mode=False)
+    #if rc != 0:
+    #    print("nmap scan failed: {0}".format(nmproc.stderr))
+    print(nm.csv())
 
     try:
-        parsed = NmapParser.parse(nmproc.stdout)
+        parsed = nmap_parser.
     except NmapParserException as e:
         print("Exception raised while parsing scan: {0}".format(e.msg))
 
@@ -33,7 +35,9 @@ def parser(xml):
     with open(sys.argv[1], "r") as fd:
         content = fd.read()
         nm.analyse_nmap_xml_scan(content)
-        print(nm.csv())
+    print('----------------------------------------------------')
+    print(nm.csv())
+    print('----------------------------------------------------')
 
 # print scan results from a nmap report
 def print_scan(nmap_report):
