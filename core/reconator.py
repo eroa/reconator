@@ -13,15 +13,22 @@ import re
 
 
 # start a new nmap scan on localhost with some specific options
-def do_scan(targets, options):
+def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
-    nm.scan(targets, options)
+    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
     print('----------------------------------------------------')
     print(nm.csv())
     print('----------------------------------------------------')
     parsed = nm.csv()
-    #if rc != 0:
+    for l in parsed:
+        if re.search('http', l):
+            print('TODO TOOLS HTTP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+#            print(l)
+       # else:
+        #    print('ploooop')
+#            print(l)
+            #if rc != 0œ:w
     #    print("nmap scan failed: {0}".format(nmproc.stderr))
 #    print(nm.csv())
 
@@ -39,7 +46,7 @@ def do_scan(targets, options):
 # # Example : nmap -oX - -p 22-443 -sV 127.0.0.1 > nmap_output.xml
 
     # with open(sys.argv[1], "r") as fd:
-        # content = fd.read()
+         # content = fd.read()
         # nm.analyse_nmap_xml_scan(content)
     # print('----------------------------------------------------')
     # print(nm.csv())
@@ -80,8 +87,7 @@ if __name__ == "__main__":
 
     f =open(sys.argv[1],   'r')
     for ip in f:
-        options = '-sV -sT -vvv -Pn -oA "/tmp/reconator_%s"' %  (ip)
-        report = multiprocessing.Process(target=do_scan, args=ip)
+        report = multiprocessing.Process(target=do_scan, args=(ip,))
         report.start()
     f.close()
 

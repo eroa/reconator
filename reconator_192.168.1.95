@@ -1,0 +1,13 @@
+# Nmap 7.01 scan initiated Sun Mar 13 02:39:59 2016 as: nmap -oX - -sV -sT -T5 -vvv -Pn -oN reconator_192.168.1.95 192.168.1.95
+Nmap scan report for XAVN2001v2 (192.168.1.95)
+Host is up, received user-set (0.015s latency).
+Scanned at 2016-03-13 02:40:03 CET for 4s
+Not shown: 999 closed ports
+Reason: 999 conn-refused
+PORT   STATE SERVICE REASON  VERSION
+80/tcp open  http    syn-ack uhttpd 1.0.0 (Netgear XAVN2001v2 WAP http config)
+Service Info: Device: WAP; CPE: cpe:/h:netgear:xavn2001v2
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Mar 13 02:40:07 2016 -- 1 IP address (1 host up) scanned in 9.26 seconds

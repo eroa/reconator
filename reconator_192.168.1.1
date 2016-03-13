@@ -1,0 +1,69 @@
+# Nmap 7.01 scan initiated Sun Mar 13 02:39:59 2016 as: nmap -oX - -sV -sT -T5 -vvv -Pn -oN reconator_192.168.1.1 192.168.1.1
+WARNING: Service 192.168.1.1:49152 had already soft-matched rtsp, but now soft-matched sip; ignoring second value
+Nmap scan report for box (192.168.1.1)
+Host is up, received user-set (0.037s latency).
+Scanned at 2016-03-13 02:40:03 CET for 73s
+Not shown: 996 filtered ports
+Reason: 996 no-responses
+PORT      STATE SERVICE     REASON  VERSION
+53/tcp    open  domain      syn-ack dnsmasq 2.68
+80/tcp    open  http        syn-ack lighttpd
+1287/tcp  open  routematch? syn-ack
+49152/tcp open  rtsp        syn-ack
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port1287-TCP:V=7.01%I=7%D=3/13%Time=56E4C4FD%P=x86_64-unknown-linux-gnu
+SF:%r(NULL,551,"01=1;02=92\.94\.94\.152;03=NB6V-FXC-r0;04=249504919CC0;05=
+SF:VU2003400792333021;06=2980289;07=2791352;08=2;09=1;0A=0;0C=92\.94\.94\.
+SF:152;0D=NB6V-BOOTLOADER-R3\.3\.2_NB6V-MAIN-R3\.4\.5_NB6V-MAIN-R3\.3\.9_N
+SF:B6V-XDSL-A2pv6F038m_NB6V-CONFIG-R3\.4\.5\.0;0E=RGEU9RN;0F=0;10=on;11=55
+SF:300;12=12117;15=2791352;16=G\.DMT;18=auto;19=0;1A=0;1B=0;1C=0;1D=0\.0;1
+SF:E=0\.0;1F=0\.0;20=0\.0;21=0\.0;22=13\.0;23=0;24=0;25=0;26=0;27=0;28=0;2
+SF:9=0;2A=0;2B=0;2C=0;2D=0;2E=0;2F=0;30=0;31=0;32=2980237;33=0;34=0;35=0;3
+SF:6=0;37=0;38=0;39=0;3A=0;41=1457081726;42=-19\.482303;43=2\.570000;44=15
+SF:\.040000;45=57\.950000;46=3\.338000;47=2039905;48=7P5GYMAP;49=ALCLF5A29
+SF:935;4A=0;4B=0;4C=0;4D=0;4E=2;4F=0;50=1;51=1;52=1;53=1;54=0;55=1;56=1;57
+SF:=0;58=1;59=1;5A=1;5B=1;5C=1;5D=1;5E=1;5F=1;60=1;61=1;62=0;63=1;64=1;65=
+SF:1009464361494;66=23345932330;67=588924269;68=31;69=2980228;6A=1;6B=0;6C
+SF:=down;6D=0;6F=off;71=unknown;72=0;73=1;74=0;75=A2pv6F038m\.d24;76=9THD\
+SF:|CBV1-CO-5,CBV1-CO-");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port49152-TCP:V=7.01%I=7%D=3/13%Time=56E4C500%P=x86_64-unknown-linux-gn
+SF:u%r(FourOhFourRequest,117,"HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-
+SF:Type:\x20text/html\r\nConnection:\x20close\r\nContent-Length:\x20134\r\
+SF:nServer:\x20neufbox/neufbox\x20UPnP/1\.1\x20MiniUPnPd/1\.8\r\nExt:\r\n\
+SF:r\n<HTML><HEAD><TITLE>404\x20Not\x20Found</TITLE></HEAD><BODY><H1>Not\x
+SF:20Found</H1>The\x20requested\x20URL\x20was\x20not\x20found\x20on\x20thi
+SF:s\x20server\.</BODY></HTML>\r\n")%r(GenericLines,124,"\x20501\x20Not\x2
+SF:0Implemented\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\nC
+SF:ontent-Length:\x20149\r\nServer:\x20neufbox/neufbox\x20UPnP/1\.1\x20Min
+SF:iUPnPd/1\.8\r\nExt:\r\n\r\n<HTML><HEAD><TITLE>501\x20Not\x20Implemented
+SF:</TITLE></HEAD><BODY><H1>Not\x20Implemented</H1>The\x20HTTP\x20Method\x
+SF:20is\x20not\x20implemented\x20by\x20this\x20server\.</BODY></HTML>\r\n"
+SF:)%r(GetRequest,117,"HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Type:\x
+SF:20text/html\r\nConnection:\x20close\r\nContent-Length:\x20134\r\nServer
+SF::\x20neufbox/neufbox\x20UPnP/1\.1\x20MiniUPnPd/1\.8\r\nExt:\r\n\r\n<HTM
+SF:L><HEAD><TITLE>404\x20Not\x20Found</TITLE></HEAD><BODY><H1>Not\x20Found
+SF:</H1>The\x20requested\x20URL\x20was\x20not\x20found\x20on\x20this\x20se
+SF:rver\.</BODY></HTML>\r\n")%r(HTTPOptions,12C,"HTTP/1\.0\x20501\x20Not\x
+SF:20Implemented\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\n
+SF:Content-Length:\x20149\r\nServer:\x20neufbox/neufbox\x20UPnP/1\.1\x20Mi
+SF:niUPnPd/1\.8\r\nExt:\r\n\r\n<HTML><HEAD><TITLE>501\x20Not\x20Implemente
+SF:d</TITLE></HEAD><BODY><H1>Not\x20Implemented</H1>The\x20HTTP\x20Method\
+SF:x20is\x20not\x20implemented\x20by\x20this\x20server\.</BODY></HTML>\r\n
+SF:")%r(RTSPRequest,12C,"RTSP/1\.0\x20501\x20Not\x20Implemented\r\nContent
+SF:-Type:\x20text/html\r\nConnection:\x20close\r\nContent-Length:\x20149\r
+SF:\nServer:\x20neufbox/neufbox\x20UPnP/1\.1\x20MiniUPnPd/1\.8\r\nExt:\r\n
+SF:\r\n<HTML><HEAD><TITLE>501\x20Not\x20Implemented</TITLE></HEAD><BODY><H
+SF:1>Not\x20Implemented</H1>The\x20HTTP\x20Method\x20is\x20not\x20implemen
+SF:ted\x20by\x20this\x20server\.</BODY></HTML>\r\n")%r(SIPOptions,12B,"SIP
+SF:/2\.0\x20501\x20Not\x20Implemented\r\nContent-Type:\x20text/html\r\nCon
+SF:nection:\x20close\r\nContent-Length:\x20149\r\nServer:\x20neufbox/neufb
+SF:ox\x20UPnP/1\.1\x20MiniUPnPd/1\.8\r\nExt:\r\n\r\n<HTML><HEAD><TITLE>501
+SF:\x20Not\x20Implemented</TITLE></HEAD><BODY><H1>Not\x20Implemented</H1>T
+SF:he\x20HTTP\x20Method\x20is\x20not\x20implemented\x20by\x20this\x20serve
+SF:r\.</BODY></HTML>\r\n");
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Mar 13 02:41:16 2016 -- 1 IP address (1 host up) scanned in 77.38 seconds
