@@ -25,6 +25,8 @@ def do_scan(targets):
         if re.search('http', l):
             print('TODO TOOLS HTTP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 #            print(l)
+            nmap_parser.
+
        # else:
         #    print('ploooop')
 #            print(l)
