@@ -48,14 +48,6 @@ def do_scan(targets):
         for port in lport:
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
 
-    #for line in open ('/tmp/nm_reco_%s' % targets):
-        #if "http" in line:
-            #print("GREP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    #l = open ("/tmp/nm_reco_%s" % targets, "r")
-    #for row in l:
-#        if "http" in row:
- #           print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-
    # r = csv.reader('ncsv', delimiters=";")
     #wfcsv = open (fcsv, delimiter=";", quotechar='"',quoting=csv.QUOTE_ALL % targets )
 
