@@ -3,20 +3,22 @@
 import nmap
 import sys
 import multiprocessing
+import subprocess
 #import libnmap
 #import nmmapparser
-import nmap_parser
+#import nmap_parser
 #from libnmap import NmapParser, NmapParserException
 #from libnmap import NmapProcess
 import re
 import csv
-
+import os
 
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
     nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
+#    subprocess.process()
     print('----------------------------------------------------')
     print(nm.csv())
 
@@ -48,7 +50,7 @@ def do_scan(targets):
         for port in lport:
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
 
-   # r = csv.reader('ncsv', delimiters=";")
+   #rmport fail = csv.reader('ncsv', delimiters=";")
     #wfcsv = open (fcsv, delimiter=";", quotechar='"',quoting=csv.QUOTE_ALL % targets )
 
     # for l in r:
