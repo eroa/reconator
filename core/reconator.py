@@ -9,7 +9,7 @@ import nmap_parser
 #from libnmap import NmapParser, NmapParserException
 #from libnmap import NmapProcess
 import re
-
+import csv
 
 
 # start a new nmap scan on localhost with some specific options
@@ -19,12 +19,50 @@ def do_scan(targets):
     nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
     print('----------------------------------------------------')
     print(nm.csv())
+
+#:    fcsv = open('/tmp/nm_%s' %targets, "wb")
     print('----------------------------------------------------')
-    parsed = nm.csv()
-    for l in parsed:
-        if re.search('http', l):
-            print('TODO TOOLS HTTP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-#            print(l)
+    ncsv = nm.csv()
+    r = csv.reader(ncsv)
+    nmenm = "/tmp/nm_reco_%s" % targets
+    f = open(nmenm, 'w')
+    f.write(ncsv)
+    for host in nm.all_hosts():
+        print('----------------------------------------------------')
+        print('Host : {0} ({1})'.format(host, nm[host].hostname()))
+       #  print('State : {0}'.format(nm[host].state()))
+       # # print('Product : {0}'.format(nm[host].product()))
+        # print('ExtraInfo : {0}'.format(nm[host].extrainfo()))
+        # print('Version : {0}'.format(nm[host].version()))
+       #  print ('port : %s\tstate : %s' % (port, nm[host][proto][port]['state']))
+        # print ('port : %s\tservice : %s' % (port, nm[host][proto][port]['product']))
+        # print ('port : %s\tinfo: %s' % (port, nm[host][proto][port]['extrainfo']))
+        # print ('port : %s\tversion : %s' % (port, nm[host][proto][port]['version']))
+
+    for proto in nm[host].all_protocols():
+        print('----------')
+        print('Protocol : {0}'.format(proto))
+
+        lport = list(nm[host][proto].keys())
+        lport.sort()
+        for port in lport:
+            print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
+
+    #for line in open ('/tmp/nm_reco_%s' % targets):
+        #if "http" in line:
+            #print("GREP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    #l = open ("/tmp/nm_reco_%s" % targets, "r")
+    #for row in l:
+#        if "http" in row:
+ #           print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+   # r = csv.reader('ncsv', delimiters=";")
+    #wfcsv = open (fcsv, delimiter=";", quotechar='"',quoting=csv.QUOTE_ALL % targets )
+
+    # for l in r:
+        # if re.search('http', l):
+            # print('TODO TOOLS HTTP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+# #            print(l)
 #            nmap_parser.
 
        # else:

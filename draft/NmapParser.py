@@ -30,7 +30,7 @@ def parseData(line):
                 data.append(j)
         else:
             data.append(i.strip())
-        
+
     # Get the version type
     i = 4
     version = ''
@@ -57,21 +57,21 @@ with open(finput, 'r') as fin:
             if ip != '':    break
         if ip == None:
             break
-        
+
         # Get first column from port scan
         while not findHead(fin.readline()):
             pass
-            
+
         # Get all data
         data = []
         while True:
             line = fin.readline()
             # All lines stating with '|' will be ignored
             if line[0] == '|':  continue
-            
+
             # Check if line is invalid
             if not checkLine(line):   break
-            
+
             # Record the line
             data.append(parseData(line))
 
