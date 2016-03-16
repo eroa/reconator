@@ -20,16 +20,27 @@ def do_scan(targets):
     nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
 #    subprocess.process()
     print('----------------------------------------------------')
+    print("CSV")
+    print('----------------------------------------------------')
     print(nm.csv())
 
 #:    fcsv = open('/tmp/nm_%s' %targets, "wb")
+    print('----------------------------------------------------')
+
     print('----------------------------------------------------')
     ncsv = nm.csv()
     r = csv.reader(ncsv)
     nmenm = "/tmp/nm_reco_%s" % targets
     f = open(nmenm, 'w')
     f.write(ncsv)
+    f.close()
+    print('----------------------------------------------------')
+    print("write nm_reco_*")
+    print('----------------------------------------------------')
+    #subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
     for host in nm.all_hosts():
+        print('----------------------------------------------------')
+        print('Hostname')
         print('----------------------------------------------------')
         print('Host : {0} ({1})'.format(host, nm[host].hostname()))
        #  print('State : {0}'.format(nm[host].state()))
@@ -41,6 +52,10 @@ def do_scan(targets):
         # print ('port : %s\tinfo: %s' % (port, nm[host][proto][port]['extrainfo']))
         # print ('port : %s\tversion : %s' % (port, nm[host][proto][port]['version']))
 
+
+        print('----------------------------------------------------')
+        print("nm[host][proto].keys() lport sort")
+        print('----------------------------------------------------')
     for proto in nm[host].all_protocols():
         print('----------')
         print('Protocol : {0}'.format(proto))
@@ -50,6 +65,24 @@ def do_scan(targets):
         for port in lport:
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
 
+        print('----------------------------------------------------')
+    for host in nm.all_hosts():
+        res = open('/tmp/nm_reco_%s' % host)
+        print('----------------------------------------------------')
+        print("read csv writed")
+        print('----------------------------------------------------')
+        for row in res :
+            print(row)
+
+        data = res.read()
+        matchttp = re.search(r'http', row)
+        if matchttp:
+            print("GOTCHA!!!!!")
+            print("launch nikto...")
+            try:
+                subprocess.call('/usr/bin/nikto %s ' % host)
+            except:
+                print(nikto failed)
    #rmport fail = csv.reader('ncsv', delimiters=";")
     #wfcsv = open (fcsv, delimiter=";", quotechar='"',quoting=csv.QUOTE_ALL % targets )
 
@@ -62,10 +95,6 @@ def do_scan(targets):
        # else:
         #    print('ploooop')
 #            print(l)
-            #if rc != 0œ:w
-    #    print("nmap scan failed: {0}".format(nmproc.stderr))
-#    print(nm.csv())
-
    # try:
     #arsed = nmap_parser.parser[nm.csv()]
     # except NmapParserException as e:
