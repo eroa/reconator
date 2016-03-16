@@ -17,7 +17,7 @@ import os
 def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
-    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
+    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN /tmp/reconator_%s' % targets)
 #    subprocess.process()
 #     print('----------------------------------------------------')
 #     print("CSV")
@@ -26,14 +26,14 @@ def do_scan(targets):
     print('----------------------------------------------------')
     ncsv = nm.csv()
     r = csv.reader(ncsv)
-    nmenm = "/tmp/nm_reco_%s" % targets
+    nmenm = '/tmp/nm_reco_%s' % targets
     f = open(nmenm, 'w')
     f.write(ncsv)
     f.close()
     print('----------------------------------------------------')
     print("write nm_reco_*")
     print('----------------------------------------------------')
-    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
+    #subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
     for host in nm.all_hosts():
         # print('----------------------------------------------------')
         # print('Hostname')
@@ -51,7 +51,7 @@ def do_scan(targets):
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
         print('----------------------------------------------------')
     for host in nm.all_hosts():
-        res = open('/tmp/nm_reco_%s' % host)
+        res = open("/tmp/nm_reco_%s" % host)
         #TODO fix nom nm_reco (quote + $)
         print('----------------------------------------------------')
         print("read csv writed")
