@@ -82,7 +82,7 @@ def do_scan(targets):
             try:
                 subprocess.call('/usr/bin/nikto %s ' % host)
             except:
-                print(nikto failed)
+                print('vnikto failed')
    #rmport fail = csv.reader('ncsv', delimiters=";")
     #wfcsv = open (fcsv, delimiter=";", quotechar='"',quoting=csv.QUOTE_ALL % targets )
 
