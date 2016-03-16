@@ -8,6 +8,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+<<<<<<< HEAD
 badd +72 reconator.py
 badd +1 parser_alt
 badd +28 nmapscan.py
@@ -20,13 +21,49 @@ badd +2 format_nm.sh
 badd +0 NERD_tree_2
 badd +0 ~/workspace/reconator/examples_python-nmap.py
 badd +0 ~/workspace/reconator/draft/NmapParser.py
+=======
+badd +2 format_nm.sh
+badd +36 reconator_v0.3.py
+badd +12 csv2txt.py
+badd +28 reconator_v0.3bis.py
+badd +0 ~/workspace/reconator/draft/NmapParser.py
+badd +0 ~/scripts/rsyncbkbk.sh
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
 argglobal
 silent! argdel *
 set stal=2
-edit reconator.py
+edit reconator_v0.3bis.py
 set splitbelow splitright
+<<<<<<< HEAD
 wincmd t
 set winheight=1 winwidth=1
+=======
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
+wincmd w
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 31 + 56) / 112)
+exe 'vert 2resize ' . ((&columns * 62 + 56) / 112)
+exe 'vert 3resize ' . ((&columns * 17 + 56) / 112)
+argglobal
+enew
+file NERD_tree_1
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+lcd ~/workspace/reconator/core
+wincmd w
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
 argglobal
 setlocal fdm=expr
 setlocal fde=pymode#folding#expr(v:lnum)
@@ -36,6 +73,7 @@ setlocal fdl=1
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+<<<<<<< HEAD
 let s:l = 57 - ((24 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
@@ -44,48 +82,37 @@ normal! zt
 normal! 049|
 lcd ~/workspace/reconator/core
 tabedit ~/workspace/reconator/core/format_nm.sh
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
+=======
+let s:l = 28 - ((19 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+28
+normal! 06|
+lcd ~/workspace/reconator/core
+wincmd w
 argglobal
-setlocal fdm=manual
-setlocal fde=0
+edit ~/workspace/reconator/core/csv2txt.py
+setlocal fdm=expr
+setlocal fde=pymode#folding#expr(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 23) / 46)
+let s:l = 13 - ((12 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 052|
-lcd ~/workspace/reconator/core
-tabedit ~/workspace/reconator/core/parser_alt
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 23) / 46)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-lcd ~/workspace/reconator/core
-tabedit ~/workspace/reconator/core/nmapscan.py
+13
+normal! 032|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 56) / 112)
+exe 'vert 2resize ' . ((&columns * 62 + 56) / 112)
+exe 'vert 3resize ' . ((&columns * 17 + 56) / 112)
+tabedit ~/workspace/reconator/core/reconator_v0.3.py
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -98,14 +125,144 @@ setlocal fdl=1
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 28 - ((26 * winheight(0) + 23) / 46)
+<<<<<<< HEAD
+silent! normal! zE
+let s:l = 2 - ((1 * winheight(0) + 23) / 46)
+=======
+let s:l = 36 - ((29 * winheight(0) + 23) / 47)
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-28
+36
+normal! 0
+lcd ~/workspace/reconator/core
+<<<<<<< HEAD
+tabedit ~/workspace/reconator/core/parser_alt
+=======
+tabedit ~/scripts/rsyncbkbk.sh
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 2 - ((1 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
+normal! 06|
+lcd ~/scripts
+tabedit ~/workspace/reconator/core/csv2txt.py
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+<<<<<<< HEAD
+=======
+exe 'vert 1resize ' . ((&columns * 31 + 56) / 112)
+exe 'vert 2resize ' . ((&columns * 80 + 56) / 112)
+argglobal
+enew
+file ~/NERD_tree_1
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+lcd ~/workspace/reconator/core
+wincmd w
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
+argglobal
+setlocal fdm=expr
+setlocal fde=pymode#folding#expr(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+<<<<<<< HEAD
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+=======
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/workspace/reconator/core
+<<<<<<< HEAD
+tabedit ~/workspace/reconator/core/nmapscan.py
+=======
+wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 56) / 112)
+exe 'vert 2resize ' . ((&columns * 80 + 56) / 112)
+tabedit ~/workspace/reconator/core/format_nm.sh
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+<<<<<<< HEAD
+=======
+exe 'vert 1resize ' . ((&columns * 31 + 56) / 112)
+exe 'vert 2resize ' . ((&columns * 80 + 56) / 112)
+argglobal
+enew
+file ~/NERD_tree_1
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+lcd ~/workspace/reconator/core
+wincmd w
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+<<<<<<< HEAD
+let s:l = 28 - ((26 * winheight(0) + 23) / 46)
+=======
+silent! normal! zE
+let s:l = 2 - ((1 * winheight(0) + 23) / 47)
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+2
 normal! 017|
 lcd ~/workspace/reconator/core
+<<<<<<< HEAD
 tabnext 2
+=======
+wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 56) / 112)
+exe 'vert 2resize ' . ((&columns * 80 + 56) / 112)
+tabnext 3
+>>>>>>> d4463d743b564097bd52dd08eafe2e6bfac039c3
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
