@@ -18,15 +18,16 @@ def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
     nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
-#    subprocess.process()
-#     print('----------------------------------------------------')
-#     print("CSV")
-#     print('----------------------------------------------------')
+
+#   subprocess.process()
+    print('----------------------------------------------------')
+    print("CSV")
+    print('----------------------------------------------------')
     print(nm.csv())
     print('----------------------------------------------------')
     ncsv = nm.csv()
     r = csv.reader(ncsv)
-    nmenm = "/tmp/nm_reco_%s" % targets
+    nmenm = '/tmp/nm_reco_%s' % targets
     f = open(nmenm, 'w')
     f.write(ncsv)
     f.close()
@@ -35,13 +36,13 @@ def do_scan(targets):
     print('----------------------------------------------------')
     subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
     for host in nm.all_hosts():
-        # print('----------------------------------------------------')
-        # print('Hostname')
-        # print('----------------------------------------------------')
+        print('----------------------------------------------------')
+        print('Hostname')
+        print('----------------------------------------------------')
         print('Host : {0} ({1})'.format(host, nm[host].hostname()))
-        # print('----------------------------------------------------')
-        # print("nm[host][proto].keys() lport sort")
-        # print('----------------------------------------------------')
+        print('----------------------------------------------------')
+        print("nm[host][proto].keys() lport sort")
+        print('----------------------------------------------------')
     for proto in nm[host].all_protocols():
         print('----------')
         print('Protocol : {0}'.format(proto))
@@ -50,31 +51,36 @@ def do_scan(targets):
         for port in lport:
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
         print('----------------------------------------------------')
-    for host in nm.all_hosts():
-        res = open('/tmp/nm_reco_%s' % host)
+#    for host in nm.all_hosts():
+#    ofil = '/tmp/nm_reco_%s' % targets
+#    res = open(ofil, 'r')
         #TODO fix nom nm_reco (quote + $)
-        print('----------------------------------------------------')
-        print("read csv writed")
-        print('----------------------------------------------------')
-        for row in res :
-            print(row)
+#    print('----------------------------------------------------')
+#    print("read csv writed")
+#    print('----------------------------------------------------')
+    r = csv.reader(ncsv, delimiter="\n")
+    for row in r :
+        print(row)
 
-        data = res.read()
-        matchttp = re.search(r'http', row)
-        matchttps = re.search(r'https', row)
-        matchssh = re.search(r'ssh', row)
-        matchftp = re.search(r'ftp', row)
-        matchtelnet = re.search(r'telnet', row)
-        matchsnmp = re.search(r'snmp', row)
-        matchsmtp = re.search(r'smtp', row)
+   #     data = r.read()
+        matchttp = re.search(r'http', str(row))
+        matchttps = re.search(r'https', str(row))
+        matchssh = re.search(r'ssh', str(row))
+        matchftp = re.search(r'ftp', str(row))
+        matchtelnet = re.search(r'telnet', str(row))
+        matchsnmp = re.search(r'snmp', str(row))
+        matchsmtp = re.search(r'smtp', str(row)
 
-        if matchttp:
+        if matchttp is not None:
             print("GOTCHA!!!!!")
             print("launch nikto...")
             try:
                 subprocess.call('/usr/bin/nikto %s ' % host)
             except:
                 print('vnikto failed')
+        else:
+            print("pas de http")
+
 
     return parsed
 
