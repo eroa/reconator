@@ -58,28 +58,29 @@ def do_scan(targets):
 #    print('----------------------------------------------------')
 #    print("read csv writed")
 #    print('----------------------------------------------------')
-    r = csv.reader(ncsv, delimiter="\n")
-    for row in r :
-        print(row)
-
-   #     data = r.read()
-        matchttp = re.search(r'http', str(row))
-        matchttps = re.search(r'https', str(row))
-        matchssh = re.search(r'ssh', str(row))
-        matchftp = re.search(r'ftp', str(row))
-        matchtelnet = re.search(r'telnet', str(row))
-        matchsnmp = re.search(r'snmp', str(row))
-        matchsmtp = re.search(r'smtp', str(row)
-
-        if matchttp is not None:
+#    r = csv.reader(ncsv, delimiter="\n")
+    fncsv = ncsv.split("\n", 1)[1:]
+    for row in fncsv :
+        if "http" in row:
+            print(row)
             print("GOTCHA!!!!!")
             print("launch nikto...")
-            try:
-                subprocess.call('/usr/bin/nikto %s ' % host)
-            except:
-                print('vnikto failed')
+           # try:
+            subprocess.call('/usr/bin/nikto %s ' % host)
+            #except:
+             #   print('vnikto failed')
         else:
             print("pas de http")
+
+   #     data = r.read()
+       # matchttp = re.search(r'http', str(row))
+   #     matchttps = re.search(r'https', str(row))
+    #    matchssh = re.search(r'ssh', str(row))
+    #    matchftp = re.search(r'ftp', str(row))
+    #    matchtelnet = re.search(r'telnet', str(row))
+    #    matchsnmp = re.search(r'snmp', str(row))
+    #    matchsmtp = re.search(r'smtp', str(row)
+
 
 
     return parsed
