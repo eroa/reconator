@@ -15,15 +15,15 @@ import os
 
 
 def multProc(targetin, scanip):
-    jobs = []
+    # jobs = []
     fp = multiprocessing.Process(target=targetin, args=(str(scanip)))
-    jobs.append(fp)
+    #jobs.append(fp)
     fp.start()
     return
 
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
-    subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(targets))
+    subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % str(targets))
     # TODO  check proof
 
 
@@ -31,7 +31,8 @@ def httpenum(targets):
 def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
-    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
+    nm.scan(hosts=targets,
+            arguments='-sV -sT -T5 -vvv -Pn -oN "/home/toxic/workspace/reconator/core/results/reconator_%s"' % targets)
 #   subprocess.process()
 
     ncsv = nm.csv()
@@ -80,7 +81,7 @@ def do_scan(targets):
 #            print("launch nikto...")
             for host in nm.all_hosts():
                 print("launch  proof %s " % str(host))
-                # multProc(httpenum, str(host))
+                multProc(httpenum, str(host))
                 # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
