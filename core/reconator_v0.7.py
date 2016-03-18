@@ -16,7 +16,7 @@ import os
 
 def multProc(targetin, scanip):
     jobs = []
-    p = multiprocessing.Process(target=targetin, args=(scanip))
+    p = multiprocessing.Process(target=targetin, args=(str(scanip)))
     jobs.append(p)
     p.start()
     return
@@ -84,7 +84,7 @@ def do_scan(targets):
 #            print("launch nikto...")
             for host in nm.all_hosts():
                 print("launch  proof %s " % str(host))
-                multProc(httpenum, host,)
+                multProc(httpenum, str(host), )
                 # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
