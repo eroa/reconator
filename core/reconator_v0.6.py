@@ -13,15 +13,13 @@ import re
 import csv
 import os
 
-def multproc(targetin, scanip , port):
+def multproc:
     jobs = []
-    p =multiprocessing.Process(target=targetin,args=(scanip,port))
-    jobs.append(p)
-    p.start()
+    p =multiprocessing.Proces(target=)
 
 def httpenum(targets):
-    NIKTOSCAN =
-
+    print("2DO NIKTOSCAN" )
+    subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
 
 
 # start a new nmap scan on localhost with some specific options
@@ -46,6 +44,7 @@ def do_scan(targets):
     print("write nm_reco_*")
     print('----------------------------------------------------')
 #    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
+
     for host in nm.all_hosts():
         print('----------------------------------------------------')
         print('Hostname')
@@ -80,11 +79,10 @@ def do_scan(targets):
 #            print("launch nikto...")
             for host in nm.all_hosts():
                 print("launch  proof %s " % str(host))
-           # try:
+                multproc(httpenum, host)
+                # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
-            fproof = "/home/toxic/workspace/reconator/core/proof.sh  %s" % str(host)
-            subprocess.check_output(fproof, Shell= True)
 
             #except:
              #   print('vnikto failed')
