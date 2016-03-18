@@ -1,8 +1,0 @@
-# Nmap 7.01 scan initiated Sun Mar 13 02:39:59 2016 as: nmap -oX - -sV -sT -T5 -vvv -Pn -oN reconator_192.168.1.74 192.168.1.74
-Nmap scan report for android-a074cb2efe4ba897 (192.168.1.74)
-Host is up, received user-set (0.29s latency).
-All 1000 scanned ports on android-a074cb2efe4ba897 (192.168.1.74) are filtered because of 889 no-responses and 111 host-unreaches
-
-Read data files from: /usr/bin/../share/nmap
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Mar 13 02:40:26 2016 -- 1 IP address (1 host up) scanned in 27.59 seconds

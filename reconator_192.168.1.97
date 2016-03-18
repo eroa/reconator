@@ -1,9 +1,0 @@
-# Nmap 7.01 scan initiated Sun Mar 13 02:39:59 2016 as: nmap -oX - -sV -sT -T5 -vvv -Pn -oN reconator_192.168.1.97 192.168.1.97
-Increasing send delay for 192.168.1.97 from 0 to 5 due to 11 out of 27 dropped probes since last increase.
-Nmap scan report for android-7d6f1e556eebf03a (192.168.1.97)
-Host is up, received user-set (0.026s latency).
-All 1000 scanned ports on android-7d6f1e556eebf03a (192.168.1.97) are closed because of 1000 conn-refused
-
-Read data files from: /usr/bin/../share/nmap
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Mar 13 02:40:12 2016 -- 1 IP address (1 host up) scanned in 13.27 seconds
