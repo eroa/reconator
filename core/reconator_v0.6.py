@@ -13,6 +13,12 @@ import re
 import csv
 import os
 
+def multproc(targetin, scanip , port):
+    jobs = []
+    p =multiprocessing.Process(target=targetin,args=(scanip,port))
+    jobs.append(p)
+    p.start()
+
 def httpenum(targets):
     NIKTOSCAN =
 
@@ -77,7 +83,8 @@ def do_scan(targets):
            # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
-            subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
+            fproof = "/home/toxic/workspace/reconator/core/proof.sh  %s" % str(host)
+            subprocess.check_output(fproof, Shell= True)
 
             #except:
              #   print('vnikto failed')
