@@ -22,7 +22,8 @@ def multProc(targetin, scanip, port):
 
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
-    subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
+    subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(targets))
+    # TODO  check proof
 
 
 # start a new nmap scan on localhost with some specific options
