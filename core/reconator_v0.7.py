@@ -13,9 +13,12 @@ import re
 import csv
 import os
 
-def multproc:
+def multProc(targetin, scanip, port):
     jobs = []
-    p =multiprocessing.Proces(target=)
+    p = multiprocessing.Process(target=targetin, args=(scanip,port))
+    jobs.append(p)
+    p.start()
+    return
 
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
@@ -79,7 +82,7 @@ def do_scan(targets):
 #            print("launch nikto...")
             for host in nm.all_hosts():
                 print("launch  proof %s " % str(host))
-                multproc(httpenum, host)
+                multProc(httpenum, host,)
                 # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
