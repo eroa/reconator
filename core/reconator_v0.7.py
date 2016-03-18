@@ -13,9 +13,10 @@ import re
 import csv
 import os
 
-def multProc(targetin, scanip, port):
+
+def multProc(targetin, scanip):
     jobs = []
-    p = multiprocessing.Process(target=targetin, args=(scanip,port))
+    p = multiprocessing.Process(target=targetin, args=(scanip))
     jobs.append(p)
     p.start()
     return
