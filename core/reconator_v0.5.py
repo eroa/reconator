@@ -34,7 +34,7 @@ def do_scan(targets):
     print('----------------------------------------------------')
     print("write nm_reco_*")
     print('----------------------------------------------------')
-    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
+#    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
     for host in nm.all_hosts():
         print('----------------------------------------------------')
         print('Hostname')
@@ -59,13 +59,21 @@ def do_scan(targets):
 #    print("read csv writed")
 #    print('----------------------------------------------------')
 #    r = csv.reader(ncsv, delimiter="\n")
-    fncsv = ncsv.split("\n", 1)[1:]
+#    fncsv = ncsv.split("\n", 1)[1:]
+    fncsv = ncsv.split("\n",1)
+    print('----------------------------------------------------')
+    print('csv')
+    print('----------------------------------------------------')
+    print(ncsv)
+    print('----------------------------------------------------')
+
     for row in fncsv :
         if "http" in row:
             print(row)
-            print("GOTCHA!!!!!")
+            print("GOTCHA HTTP !!!!!")
 #            print("launch nikto...")
-            print("launch /tmp/recotouch")
+            for host in nm.all_hosts():
+                    print("launch  proof %s " % str(host))
            # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
@@ -75,15 +83,10 @@ def do_scan(targets):
              #   print('vnikto failed')
         else:
             print("pas de http")
+            print('----------------------------------------------------')
 
-   #     data = r.read()
        # matchttp = re.search(r'http', str(row))
-   #     matchttps = re.search(r'https', str(row))
-    #    matchssh = re.search(r'ssh', str(row))
-    #    matchftp = re.search(r'ftp', str(row))
-    #    matchtelnet = re.search(r'telnet', str(row))
-    #    matchsnmp = re.search(r'snmp', str(row))
-    #    matchsmtp = re.search(r'smtp', str(row)
+    print('###########################################################')
 
 
 
@@ -97,13 +100,3 @@ if __name__ == "__main__":
         report = multiprocessing.Process(target=do_scan, args=(ip,))
         report.start()
     f.close()
-
-     #   r = re.compile('/tmp/reconator_2...xml')
-      #  e = open(r, 'r')
-       # parser(e)
-#    if report:
-    #     print_scan(report)
-    # else:
-    #     print("No results returned")
-    #
-
