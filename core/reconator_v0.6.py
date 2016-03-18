@@ -13,6 +13,11 @@ import re
 import csv
 import os
 
+def httpenum(targets):
+    NIKTOSCAN =
+
+
+
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
     parsed = None
@@ -68,11 +73,11 @@ def do_scan(targets):
             print("GOTCHA HTTP !!!!!")
 #            print("launch nikto...")
             for host in nm.all_hosts():
-                    print("launch  proof %s " % str(host))
+                print("launch  proof %s " % str(host))
            # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
-            subprocess.call("/home/toxic/workspace/reconator/core/proof.sh")
+            subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
 
             #except:
              #   print('vnikto failed')
