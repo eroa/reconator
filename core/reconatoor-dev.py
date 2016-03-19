@@ -86,7 +86,8 @@ def do_scan(targets):
 #            print("launch nikto...")
             for host in nm.all_hosts():
                 print("launch  proof %s " % str(host))
-                multProc(httpenum, str(host))
+                fhost = str("".join(host))
+                multProc(httpenum, fhost)
                 # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
