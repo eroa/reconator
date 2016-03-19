@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 # -*- coding: utf-8 -*-
 import nmap
 import sys
@@ -14,13 +14,16 @@ import csv
 import os
 
 
+# jobs = []
+# ip ="".join(scanip)
+#sip = str(ip)#!/usr/bin/env python
+
 def multProc(targetin, scanip):
 	# jobs = []
 	fp = multiprocessing.Process(target=targetin, args=(str(scanip)))
 	# jobs.append(fp)
 	fp.start()
 	return
-
 
 def httpenum(targets):
 	print("2DO NIKTOSCAN")
@@ -85,7 +88,7 @@ def do_scan(targets):
 				multProc(httpenum, str(host))
 				# try:
 				# subprocess.call('/usr/bin/nikto %s ' % host)
-				# subprocess.call('echo zob > "/tmp/recotouch" ')
+				#subprocess.call('echo zob > "/tmp/recotouch" ')
 
 				# except:
 				#   print('vnikto failed')
@@ -105,4 +108,4 @@ if __name__ == "__main__":
 	for ip in f:
 		report = multiprocessing.Process(target=do_scan, args=(ip,))
 		report.start()
-	f.close()
+    f.close()
