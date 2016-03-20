@@ -28,6 +28,7 @@ def multProc(targetin, scanip):
 
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
+    multProc("")
     subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % str(targets), Shell=True)
     # TODO  check proof
 
