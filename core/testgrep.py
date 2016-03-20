@@ -9,14 +9,14 @@ nm.scan(hosts='127.0.0.1', arguments='-sT -sV  -vvv -oN /tmp/testgrep')
 ncsv = nm.csv()
 fncsv = ncsv.split("\n",1)
 for row in fncsv :
-	if "http" in row:
+	if "tor" in row:
 		print(row)
         print("GOTCHA HTTP !!!!!")
 #            print("launch nikto...")
         for host in nm.all_hosts():
             print("launch  proof %s " % str(host))
             fhost = str("".join(host))
-            subprocess.call("nikto", "192.168.1.65")
+            subprocess.call("/usr/bin/touch", "/tmp/a")
 if 'tor' in ncsv:
 	print "victory"
 else:
