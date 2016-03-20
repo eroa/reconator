@@ -20,16 +20,17 @@ import os
 	#sip = str(ip)#!/usr/bin/env python
 
 def multProc(targetin, scanip):
-    # jobs = []
-    fp = multiprocessing.Process(target=targetin, args=(str(scanip)))
-    #jobs.append(fp)
+    jobs = []
+    fp = multiprocessing.Process(target=targetin, args=(str(scanip), ))
+    jobs.append(fp)
     fp.start()
     return
 
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
-    multProc("")
-    subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % str(targets), Shell=True)
+#    multProc("")
+    NIKTO = "/home/toxic/workspace/reconator/core/proof.sh %s" % "a"
+    subprocess.call(NIKTO, Shell=True)
     # TODO  check proof
 
 
@@ -87,7 +88,7 @@ def do_scan(targets):
 #            print("launch nikto...")
             for host in nm.all_hosts():
                 print("launch  proof %s " % str(host))
-                fhost = str("".join(host))
+                fhost =str("".join(host))
                 multProc(httpenum, fhost)
                 # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
