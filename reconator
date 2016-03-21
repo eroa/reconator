@@ -27,10 +27,12 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=1071;Python;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Fworkspace%2Freconator%2Fexamples_python-nmap.py;0;4
-FILE_NAME_1=6391;Python;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Fworkspace%2Freconator%2Finspiration%2Frecon_scan%2Frecon_scan%2Freconscan.py;0;4
-FILE_NAME_2=0;Python;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Fworkspace%2Freconator%2Fcore%2Fcsv2txt.py;0;4
+current_page=4
+FILE_NAME_0=840;Python;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Fworkspace%2Freconator%2Fexamples_python-nmap.py;0;4
+FILE_NAME_1=1720;Python;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Fworkspace%2Freconator%2Finspiration%2Frecon_scan%2Frecon_scan%2Freconscan.py;0;4
+FILE_NAME_2=0;None;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Foscp%2Freports%2Foscp%2Fmachines%2F10.1.1%2F10sTsVsCsUopentoppO.nmap;0;4
+FILE_NAME_3=9;None;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Foscp%2Freports%2Foscp%2F1rapports%2Fexos%2Fexploits%2Fslmail%2Fold%2Fjmpesp;0;4
+FILE_NAME_4=0;Python;0;EUTF-8;1;1;0;%2Fhome%2Ftoxic%2Foscp%2Freports%2Foscp%2F1rapports%2Fexos%2Fexploits%2Fslmail%2Fold%2Fsploit_slmail.py;0;4
 
 [VTE]
 last_dir=/home/toxic

@@ -4,52 +4,37 @@ import nmap
 import sys
 import multiprocessing
 import subprocess
+#import libnmap
+#import nmmapparser
+#import nmap_parser
+#from libnmap import NmapParser, NmapParserException
+#from libnmap import NmapProcess
 import re
 import csv
 import os
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#do http enumeration
-def httpenum(targets):
-#    NIKTOSCAN =  "nikto --host %s -p %s |tee  %s.nikto  " % (targets, ports,targets)
-    NIKTOSCAN =  "nikto --host %s  |tee  %s.nikto  " % (targets, targets)
-    WHATWEB = "whatweb http://%s" %(targets,targets)
-    SSLSCAN = "sslscan %s |tee %s.sslscan" %(targets,targets)
 
-
-=======
-def multproc(targetin, scanip , port):
-=======
-def multproc:
->>>>>>> dev
-    jobs = []
-    p =multiprocessing.Proces(target=)
+def multProc(targetin, scanip):
+    # jobs = []
+    fp = multiprocessing.Process(target=targetin, args=(str(scanip)))
+    #jobs.append(fp)
+    fp.start()
+    return
 
 def httpenum(targets):
-<<<<<<< HEAD
-    NIKTOSCAN =
->>>>>>> dev
-
-=======
     print("2DO NIKTOSCAN" )
-    subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
->>>>>>> dev
+    subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % str(targets))
+    # TODO  check proof
 
 
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
-    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
-    ip  = str(nm.all_hosts())
-    print(ip)
+    nm.scan(hosts=targets,
+            arguments='-sV -sT -T5 -vvv -Pn -oN "/home/toxic/workspace/reconator/core/results/reconator_%s"' % targets)
 #   subprocess.process()
-    print('----------------------------------------------------')
-    print("CSV")
-    print('----------------------------------------------------')
-    print(nm.csv())
-    print('----------------------------------------------------')
+
     ncsv = nm.csv()
     r = csv.reader(ncsv)
     nmenm = '/tmp/nm_reco_%s' % targets
@@ -62,6 +47,8 @@ def do_scan(targets):
 #    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
 
     for host in nm.all_hosts():
+        print('----------------------------------------------------')
+        print('SORT NM.ALL_HOSTS')
         print('----------------------------------------------------')
         print('Hostname')
         print('----------------------------------------------------')
@@ -79,8 +66,6 @@ def do_scan(targets):
         print('----------------------------------------------------')
 
 
-#TODO fix lauch script write file
-
 #    fncsv = ncsv.split("\n", 1)[1:]
     fncsv = ncsv.split("\n",1)
     print('----------------------------------------------------')
@@ -95,27 +80,11 @@ def do_scan(targets):
             print("GOTCHA HTTP !!!!!")
 #            print("launch nikto...")
             for host in nm.all_hosts():
-<<<<<<< HEAD
-                    print("launch  proof %s " % str(host))
-                    subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
-
-
-           # try:
-            #subprocess.call('/usr/bin/nikto %s ' % host)
-            #subprocess.call('echo zob > "/tmp/recotouch" ')
-#            subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
-=======
                 print("launch  proof %s " % str(host))
-                multproc(httpenum, host)
+                multProc(httpenum, str(host))
                 # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
-<<<<<<< HEAD
-            fproof = "/home/toxic/workspace/reconator/core/proof.sh  %s" % str(host)
-            subprocess.check_output(fproof, Shell= True)
->>>>>>> dev
-=======
->>>>>>> dev
 
             #except:
              #   print('vnikto failed')
