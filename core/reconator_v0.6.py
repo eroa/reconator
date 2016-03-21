@@ -8,6 +8,7 @@ import re
 import csv
 import os
 
+<<<<<<< HEAD
 #do http enumeration
 def httpenum(targets):
 #    NIKTOSCAN =  "nikto --host %s -p %s |tee  %s.nikto  " % (targets, ports,targets)
@@ -16,6 +17,16 @@ def httpenum(targets):
     SSLSCAN = "sslscan %s |tee %s.sslscan" %(targets,targets)
 
 
+=======
+def multproc(targetin, scanip , port):
+    jobs = []
+    p =multiprocessing.Process(target=targetin,args=(scanip,port))
+    jobs.append(p)
+    p.start()
+
+def httpenum(targets):
+    NIKTOSCAN =
+>>>>>>> dev
 
 
 
@@ -76,6 +87,7 @@ def do_scan(targets):
             print("GOTCHA HTTP !!!!!")
 #            print("launch nikto...")
             for host in nm.all_hosts():
+<<<<<<< HEAD
                     print("launch  proof %s " % str(host))
                     subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
 
@@ -84,6 +96,14 @@ def do_scan(targets):
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
 #            subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
+=======
+                print("launch  proof %s " % str(host))
+           # try:
+            #subprocess.call('/usr/bin/nikto %s ' % host)
+            #subprocess.call('echo zob > "/tmp/recotouch" ')
+            fproof = "/home/toxic/workspace/reconator/core/proof.sh  %s" % str(host)
+            subprocess.check_output(fproof, Shell= True)
+>>>>>>> dev
 
             #except:
              #   print('vnikto failed')
