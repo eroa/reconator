@@ -1,0 +1,48 @@
+# Nmap 7.10 scan initiated Tue Mar 22 12:15:32 2016 as: nmap -sn -oA audit_up.txt 192.168.17.0/24
+Nmap scan report for 192.168.17.7
+Host is up (0.00035s latency).
+Nmap scan report for lexsi-lan-eis.lexsi.lan (192.168.17.10)
+Host is up (0.00049s latency).
+Nmap scan report for fjo.lexsi.lan (192.168.17.15)
+Host is up (0.00047s latency).
+Nmap scan report for android-cb30db0cbedc649b.lexsi.lan (192.168.17.36)
+Host is up (0.090s latency).
+Nmap scan report for 192.168.17.41
+Host is up (0.022s latency).
+Nmap scan report for lexsi-lan-bma.lexsi.lan (192.168.17.46)
+Host is up (0.00020s latency).
+Nmap scan report for lexsi-lan-sro.lexsi.lan (192.168.17.52)
+Host is up (0.00076s latency).
+Nmap scan report for bankroot-server.lexsi.lan (192.168.17.53)
+Host is up (0.0020s latency).
+Nmap scan report for lexsi-sme.lexsi.lan (192.168.17.61)
+Host is up (0.00038s latency).
+Nmap scan report for drko.lexsi.lan (192.168.17.63)
+Host is up (0.00034s latency).
+Nmap scan report for lexsi-lan-fsp2.lexsi.lan (192.168.17.68)
+Host is up (0.0063s latency).
+Nmap scan report for lex-528.lexsi.lan (192.168.17.76)
+Host is up (0.00024s latency).
+Nmap scan report for 192.168.17.80
+Host is up (0.000044s latency).
+Nmap scan report for lexsi-lan-oha.lexsi.lan (192.168.17.89)
+Host is up (0.00040s latency).
+Nmap scan report for johnnet-esxi.lexsi.lan (192.168.17.93)
+Host is up (0.00036s latency).
+Nmap scan report for 192.168.17.104
+Host is up (0.00036s latency).
+Nmap scan report for lexsi-lan-sbu.lexsi.lan (192.168.17.105)
+Host is up (0.00035s latency).
+Nmap scan report for iphone-de-slim.lexsi.lan (192.168.17.106)
+Host is up (0.0033s latency).
+Nmap scan report for lexsi-lan-npo.lexsi.lan (192.168.17.107)
+Host is up (0.00033s latency).
+Nmap scan report for lexsi-lan-sro.lexsi.lan (192.168.17.118)
+Host is up (0.0020s latency).
+Nmap scan report for db-rapporttype-dev.lexsi.lan (192.168.17.125)
+Host is up (0.0020s latency).
+Nmap scan report for 192.168.17.130
+Host is up (0.0030s latency).
+Nmap scan report for 192.168.17.249
+Host is up (0.011s latency).
+# Nmap done at Tue Mar 22 12:15:40 2016 -- 256 IP addresses (23 hosts up) scanned in 8.14 seconds
