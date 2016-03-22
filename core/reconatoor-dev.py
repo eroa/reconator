@@ -29,7 +29,7 @@ def multProc(targetin, scanip):
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
 #    multProc("")
-    NIKTO =
+    #sNIKTO =
     os.system("touch /tmp/recodev")
     #subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
