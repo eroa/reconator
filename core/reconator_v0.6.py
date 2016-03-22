@@ -4,15 +4,11 @@ import nmap
 import sys
 import multiprocessing
 import subprocess
-#import libnmap
-#import nmmapparser
-#import nmap_parser
-#from libnmap import NmapParser, NmapParserException
-#from libnmap import NmapProcess
 import re
 import csv
 import os
 
+<<<<<<< HEAD
 def multproc:
     jobs = []
     p =multiprocessing.Proces(target=)
@@ -20,6 +16,17 @@ def multproc:
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
     subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
+=======
+#do http enumeration
+def httpenum(targets):
+#    NIKTOSCAN =  "nikto --host %s -p %s |tee  %s.nikto  " % (targets, ports,targets)
+    NIKTOSCAN =  "nikto --host %s  |tee  %s.nikto  " % (targets, targets)
+    WHATWEB = "whatweb http://%s" %(targets,targets)
+    SSLSCAN = "sslscan %s |tee %s.sslscan" %(targets,targets)
+
+
+
+>>>>>>> master
 
 
 # start a new nmap scan on localhost with some specific options
@@ -27,7 +34,8 @@ def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
     nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
-
+    ip  = str(nm.all_hosts())
+    print(ip)
 #   subprocess.process()
     print('----------------------------------------------------')
     print("CSV")
@@ -62,6 +70,7 @@ def do_scan(targets):
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
         print('----------------------------------------------------')
 
+
 #TODO fix lauch script write file
 
 #    fncsv = ncsv.split("\n", 1)[1:]
@@ -78,11 +87,22 @@ def do_scan(targets):
             print("GOTCHA HTTP !!!!!")
 #            print("launch nikto...")
             for host in nm.all_hosts():
+<<<<<<< HEAD
                 print("launch  proof %s " % str(host))
                 multproc(httpenum, host)
                 # try:
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
+=======
+                    print("launch  proof %s " % str(host))
+                    subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
+
+
+           # try:
+            #subprocess.call('/usr/bin/nikto %s ' % host)
+            #subprocess.call('echo zob > "/tmp/recotouch" ')
+#            subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
+>>>>>>> master
 
             #except:
              #   print('vnikto failed')
