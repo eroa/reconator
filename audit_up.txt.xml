@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.10 scan initiated Tue Mar 22 12:15:32 2016 as: nmap -sn -oA audit_up.txt 192.168.17.0/24 -->
+<nmaprun scanner="nmap" args="nmap -sn -oA audit_up.txt 192.168.17.0/24" start="1458645332" startstr="Tue Mar 22 12:15:32 2016" version="7.10" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.7" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<times srtt="347" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.10" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-eis.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="493" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.17.15" addrtype="ipv4"/>
+<hostnames>
+<hostname name="fjo.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="471" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.36" addrtype="ipv4"/>
+<hostnames>
+<hostname name="android-cb30db0cbedc649b.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="90030" rttvar="90030" to="450150"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.41" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<times srtt="22474" rttvar="22474" to="112370"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.46" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-bma.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="205" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.52" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-sro.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="761" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.17.53" addrtype="ipv4"/>
+<hostnames>
+<hostname name="bankroot-server.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="2003" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.17.61" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-sme.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="375" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.63" addrtype="ipv4"/>
+<hostnames>
+<hostname name="drko.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="343" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.68" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-fsp2.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="6317" rttvar="6317" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.76" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lex-528.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="245" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.80" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<times srtt="44" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.17.89" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-oha.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="400" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.93" addrtype="ipv4"/>
+<hostnames>
+<hostname name="johnnet-esxi.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="365" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.104" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<times srtt="357" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.105" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-sbu.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="351" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.106" addrtype="ipv4"/>
+<hostnames>
+<hostname name="iphone-de-slim.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="3282" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.107" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-npo.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="332" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.17.118" addrtype="ipv4"/>
+<hostnames>
+<hostname name="lexsi-lan-sro.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="1969" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.17.125" addrtype="ipv4"/>
+<hostnames>
+<hostname name="db-rapporttype-dev.lexsi.lan" type="PTR"/>
+</hostnames>
+<times srtt="1995" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.17.130" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<times srtt="2986" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.17.249" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<times srtt="10652" rttvar="10652" to="100000"/>
+</host>
+<runstats><finished time="1458645340" timestr="Tue Mar 22 12:15:40 2016" elapsed="8.14" summary="Nmap done at Tue Mar 22 12:15:40 2016; 256 IP addresses (23 hosts up) scanned in 8.14 seconds" exit="success"/><hosts up="23" down="233" total="256"/>
+</runstats>
+</nmaprun>
