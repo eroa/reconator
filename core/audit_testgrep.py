@@ -1,4 +1,5 @@
 import nmap
+import os
 import re
 import multiprocessing
 import subprocess
@@ -16,7 +17,7 @@ for row in fncsv :
         for host in nm.all_hosts():
             print("launch  proof %s " % str(host))
             fhost = str("".join(host))
-            subprocess.call("/usr/bin/touch", "/tmp/a")
+            os.system("/usr/bin/touch /tmp/a")
 if 'tor' in ncsv:
 	print "victory"
 else:
