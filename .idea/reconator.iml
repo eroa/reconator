@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/inspiration" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/core/results" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 2.7.11 virtualenv at ~/.virtualenvs/toxic2.7" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7.11+ virtualenv at ~/.virtualenvs/toxic2.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="exos" />
   </component>

@@ -43,6 +43,8 @@ for host in nm.all_hosts():
         print('----------------------------------------------------')
         lprod = list(nm[host][proto][port].keys())
         lprod.sort()
-
+        print str(lprod)
+        foo = lprod[4]
+        print "foo"
         for prod in lprod:
 	        print('prod : {0}'.format(nm[host][proto][port][product]))
