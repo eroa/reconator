@@ -30,7 +30,7 @@ def httpenum(targets):
     print("2DO NIKTOSCAN" )
 #    multProc("")
     #sNIKTO =
-    os.system("nikto -host %s" % targets)
+    os.system("nikto -host localhost")
     #subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
 
