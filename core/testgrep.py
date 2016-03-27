@@ -44,7 +44,7 @@ for host in nm.all_hosts():
         lprod = list(nm[host][proto][port].keys())
         lprod.sort()
         print str(lprod)
-        foo = lprod[4]
-        print "foo"
+        foo = {0}.str(lprod[4])
+        print foo
         for prod in lprod:
 	        print('prod : {0}'.format(nm[host][proto][port][product]))
