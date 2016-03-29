@@ -40,7 +40,7 @@ def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
     nm.scan(hosts=targets,
-            arguments='-sV -sT -T5 -vvv -Pn -oN "/home/toxic/workspace/reconator/core/results/reconator_%s"' % targets)
+            arguments='-sV -sT -T5 -vvv -Pn -oN "/home/auh/workspace/reconator/core/results/reconator_%s"' % targets)
 #   subprocess.process()
 
     ncsv = nm.csv()
