@@ -9,7 +9,18 @@ import csv
 import os
 
 <<<<<<< HEAD
+<<<<<<< HEAD:core/reconator_v0.6.py
 <<<<<<< HEAD
+=======
+def multproc:
+    jobs = []
+    p =multiprocessing.Proces(target=)
+
+def httpenum(targets):
+    print("2DO NIKTOSCAN" )
+    subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
+=======
+>>>>>>> dev:core/versions/reconator_v0.6.py
 #do http enumeration
 def httpenum(targets):
 #    NIKTOSCAN =  "nikto --host %s -p %s |tee  %s.nikto  " % (targets, ports,targets)
@@ -18,6 +29,7 @@ def httpenum(targets):
     SSLSCAN = "sslscan %s |tee %s.sslscan" %(targets,targets)
 
 
+<<<<<<< HEAD:core/reconator_v0.6.py
 =======
 def multproc(targetin, scanip , port):
 =======
@@ -35,6 +47,10 @@ def httpenum(targets):
     print("2DO NIKTOSCAN" )
     subprocess.call("'/home/toxic/workspace/reconator/core/proof.sh' %s" % str(host))
 >>>>>>> dev
+=======
+
+>>>>>>> master
+>>>>>>> dev:core/versions/reconator_v0.6.py
 
 
 # start a new nmap scan on localhost with some specific options
@@ -96,6 +112,15 @@ def do_scan(targets):
 #            print("launch nikto...")
             for host in nm.all_hosts():
 <<<<<<< HEAD
+<<<<<<< HEAD:core/reconator_v0.6.py
+=======
+                print("launch  proof %s " % str(host))
+                multproc(httpenum, host)
+                # try:
+            #subprocess.call('/usr/bin/nikto %s ' % host)
+            #subprocess.call('echo zob > "/tmp/recotouch" ')
+=======
+>>>>>>> dev:core/versions/reconator_v0.6.py
                     print("launch  proof %s " % str(host))
                     subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
 
@@ -104,6 +129,7 @@ def do_scan(targets):
             #subprocess.call('/usr/bin/nikto %s ' % host)
             #subprocess.call('echo zob > "/tmp/recotouch" ')
 #            subprocess.call("/home/toxic/workspace/reconator/core/proof.sh %s" % host)
+<<<<<<< HEAD:core/reconator_v0.6.py
 =======
                 print("launch  proof %s " % str(host))
                 multproc(httpenum, host)
@@ -116,6 +142,9 @@ def do_scan(targets):
 >>>>>>> dev
 =======
 >>>>>>> dev
+=======
+>>>>>>> master
+>>>>>>> dev:core/versions/reconator_v0.6.py
 
             #except:
              #   print('vnikto failed')

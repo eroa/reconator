@@ -30,7 +30,7 @@ def httpenum(targets):
     print("2DO NIKTOSCAN" )
 #    multProc("")
     #sNIKTO =
-    os.system("touch /tmp/recodev")
+    os.system("nikto -host localhost")
     #subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
 
@@ -40,7 +40,7 @@ def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
     nm.scan(hosts=targets,
-            arguments='-sV -sT -T5 -vvv -Pn -oN "/home/toxic/workspace/reconator/core/results/reconator_%s"' % targets)
+            arguments='-sV -sT -T5 -vvv -Pn -oN "/home/auh/workspace/reconator/core/results/reconator_%s"' % targets)
 #   subprocess.process()
 
     ncsv = nm.csv()
