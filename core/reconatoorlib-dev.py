@@ -1,16 +1,8 @@
 
 import nmapparser
-import libnmap
-import nmap
-import csv
-from libnmap.process import NmapProcess
-from libnmap.parser import NmapParser
-
-
 
 
 # -*- coding: utf-8 -*-
-import nmap
 import sys
 import multiprocessing
 import subprocess
@@ -20,12 +12,18 @@ import subprocess
 #from libnmap import NmapParser, NmapParserException
 #from libnmap import NmapProcess
 import re
-import csv
 import os
+import nmap
+import csv
+import libnmap
+import libnmap.parser
+import libnmap.process
+
+from libnmap.process import NmapProcess
+from libnmap.parser import NmapParser
 
 
-
-	#jobs = []
+#jobs = []
 	#ip ="".join(scanip)
 	#sip = str(ip)#!/usr/bin/env python
 
@@ -48,18 +46,30 @@ def httpenum(targets):
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
     parsed = None
-    nm = NmapProcess('192.168.11.227', options='-sT -sV --open -nvvv')
+    nm = libnmap.process.NmapProcess(targets="127.0.0.1", options="-sT -sV -oN '/tmp/recolib'", safe_mode=false)
+    rnm = nm.run()
+    # nm = NmapProcess('192.168.11.227', options='-sT -sV --open -nvvv')
     print nm.is_successful()
-    call(nm.stdout())
-    nmr = nm.stdout
-    print nmr
-    nmrx = NmapParser.parse(nmr)
-    for s in nmrx.hosts:
-        print s
-    for s in nmrx.hosts_total:
-        print si
-    rnm = nmrx.get_raw_data()
-    pars = NmapParser.parse(lnm.stdout)
+    nm.stdout
+    nmstd= nm.stdout
+    print nmstd
+    parsed = libnmap.parser.NmapParser(nmstd)
+    #return pnmstd
+    for host  in  parsed.hosts:
+        if len(host.hostnames):
+            tmphost = host.hostnames.pop()
+        else:
+            tmphost = host.address
+        print ("nmap scan for {0} {1}".format(tmphost, host.address))
+        print ("host is {0}.".format(host.STATE))
+        print ("PORT    STATEi      SERVICE")
+        for serv in host.services:
+            pserv = "{0:>5s}/{1:3s} {2:12s} {3}".format(str(SERVICE.PORT), serv.protocol,serv.state,ser.service)
+            if len(serv.banner):
+                pserv +=  " ({0})".format(serv.banner)
+            print(pserv)
+    print parsed.summary
+  #  pars = NmapParser.parse(lnm.stdout)
 #TODO grep service libnmap
 #     for row in fncsv :
 #         if "http" in row:
@@ -85,7 +95,7 @@ def do_scan(targets):
 
 
 
-    return parsed
+#    return parsed
 
 
 if __name__ == "__main__":
@@ -93,7 +103,7 @@ if __name__ == "__main__":
     f =open(sys.argv[1],   'r')
     for ip in f:
         report = multiprocessing.Process(target=do_scan, args=(ip,))
-        report.start()
+
     f.close()
 
 

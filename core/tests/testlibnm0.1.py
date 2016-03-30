@@ -11,12 +11,12 @@ rc = nm.run()
 nm.is_successful()
 #nm.summary()
 nm.stdout
-nmr = nm.stdout
-print nmr
-nmrx = NmapParser.parse(nmr)
-for s in nmrx.hosts:
+nmstd = nm.stdout
+print nmstd
+nmparsed= NmapParser.parse(nmstd)
+for s in nmparsed.hosts:
     print s
-for s in nmrx.hosts_total:
+for s in nmaparsed.
     print si
 rnm = nmrx.get_raw_data()
 print rnm
