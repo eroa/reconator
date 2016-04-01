@@ -9,14 +9,14 @@ from libnmap import NmapProcess
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets, options):
     parsed = None
-    nmproc = NmapProcess(targets, options,safe_mode=False)
+    nmproc = libnmap.process.NmapProcess(targets, options,safe_mode=False)
     rc = nmproc.run()
     if rc != 0:
         print("nmap scan failed: {0}".format(nmproc.stderr))
     print(type(nmproc.stdout))
 
     try:
-        parsed = NmapParser.parse(nmproc.stdout)
+        parsed = libnmap.parse.NlapParser.parse(nmproc.stdout)
     except NmapParserException as e:
         print("Exception raised while parsing scan: {0}".format(e.msg))
 

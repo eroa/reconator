@@ -17,7 +17,7 @@ print nmstd
 nmparsed= libnmap.parser.NmapParser.parse(nmstd)
 for s in nmparsed.hosts:
     print s
-for s in nmaparsed
+for s in nmaparsed;
     print s
 rnm = nmrx.get_raw_data()
 print rnm
