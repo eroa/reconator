@@ -28,7 +28,7 @@ def httpenum(targets):
     print("2DO NIKTOSCAN" )
     #multProc("")
     #sNIKTO =
-    os.system("nikto -host {0} |tee /tmp/reconatoor_{1}".format(targets, targets))
+    os.system("nikto -host {0} |tee /tmp/nikto_reconatoor_{1}".format(targets, targets))
     #subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
 
@@ -37,7 +37,7 @@ def httpenum(targets):
 def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
-    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/home/toxic/git/reconator/core/results/reconator_%s"' % targets)
+    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp,/reconator_%s"' % targets)
 
 #   subprocess.process()
 

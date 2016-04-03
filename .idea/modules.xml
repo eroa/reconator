@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../autoenum/.idea/autoenum.iml" filepath="$PROJECT_DIR$/../autoenum/.idea/autoenum.iml" />
       <module fileurl="file://$USER_HOME$/git/oscp/1rapports/exos/.idea/exos.iml" filepath="$USER_HOME$/git/oscp/1rapports/exos/.idea/exos.iml" />
       <module fileurl="file://$PROJECT_DIR$/../recon_t28/.idea/recon_t28.iml" filepath="$PROJECT_DIR$/../recon_t28/.idea/recon_t28.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/reconator.iml" filepath="$PROJECT_DIR$/.idea/reconator.iml" />
