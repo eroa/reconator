@@ -27,7 +27,6 @@ def multProc(targetin, scanip):
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
     #multProc("")
-    #sNIKTO =
     os.system("nikto -host {0} |tee /tmp/reconatoor_{1}".format(targets, targets))
     #subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
@@ -43,16 +42,34 @@ def do_scan(targets):
 #   subprocess.process()
 
     ncsv = nm.csv()
-    # ndict = nm.get_nmap_last_output()
-    # nmdict = '/tmp/nm_dict_{0}'.format(ndict)
-    nmenm = '/tmp/nm_reco_{0}'.format(targets)
-    f = open(nmenm, 'w')
+    ndict = nm.analyse_nmap_xml_scan(())
+    nlast= nm.get_nmap_last_output()
+    nmdict = '/tmp/nm_dict_{0}'.format(ndict)
+    nmlast= '/tmp/nm_last_{0}'.format(nlast)
+    nmcsv = '/tmp/nm_csv_{0}'.format(ncsv)
+    f = open(nmcsv, 'w')
     f.write(ncsv)
     f.close()
     print('----------------------------------------------------')
-    print("write nm_reco_*")
+    print("write nm_csv_*")
     print('----------------------------------------------------')
 #    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
+
+    g = open(nmdict, 'w')
+    g.write(ndict)
+    g.close()
+    print('----------------------------------------------------')
+    print("write nm_ndict_*")
+    print('----------------------------------------------------')
+
+    h = open(nmlast, 'w')
+    h.write(nlast)
+    h.close()
+    print('----------------------------------------------------')
+    print("write nm_last_*")
+    print('----------------------------------------------------')
+
+
 
     for host in nm.all_hosts():
         print('----------------------------------------------------')
@@ -73,8 +90,6 @@ def do_scan(targets):
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
         print('----------------------------------------------------')
 
-
-#    fncsv = ncsv.split("\n", 1)[1:]
     fncsv = ncsv.split("\n",1)
     print('----------------------------------------------------')
     print('csv')
@@ -88,18 +103,13 @@ def do_scan(targets):
             print("GOTCHA HTTP !!!!!")
 #            print("launch nikto...")
             for host in nm.all_hosts():
-                print("launch  proof %s " % str(host))
+                print("launch  httpenum_{0}".format(str(host)))
                 fhost =str("".join(host))
                 multProc(httpenum, fhost)
-                # try:
-            #subprocess.call('/usr/bin/nikto %s ' % host)
-            #subprocess.call('echo zob > "/tmp/recotouch" ')
-
-            #except:
-             #   print('vnikto failed')
         else:
             print("pas de http")
             print('----------------------------------------------------')
+    
 
        # matchttp = re.search(r'http', str(row))
     print('###########################################################')

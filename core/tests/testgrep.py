@@ -17,9 +17,10 @@ for row in fncsv :
         for host in nm.all_hosts():
             print("launch  proof %s " % str(host))
             fhost = str("".join(host))
-            os.system("/usr/bin/touch /tmp/a")
+            os.system("nikto -host %s" % host)
 if 'tor' in ncsv:
 	print "victory"
+
 else:
 	print "zob"
 

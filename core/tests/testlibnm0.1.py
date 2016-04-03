@@ -6,11 +6,17 @@ import csv
 
 from libnmap.process import NmapProcess
 from libnmap.parser import NmapParser
-
+from libnmap.objects.service import NmapService
 nm = libnmap.process.NmapProcess(targets='127.0.0.1', options='-sT -sV --open -nvvv')
 rc = nm.run()
-#nm.is_successful()
-#nm.summary()
+nmout =  nm.stdout
+print nmout
+succes  = nm.is_successful()
+print "succes {0}".format(succes)
+pars = NmapParser(nmout)
+
+serv = NmapService(nm)
+nm.
 
 nmstd = nm.stdout
 print nmstd
