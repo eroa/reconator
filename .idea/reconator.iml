@@ -16,6 +16,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="autoenum" />
     <orderEntry type="module" module-name="autoenum" />
+    <orderEntry type="module" module-name="exos" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
