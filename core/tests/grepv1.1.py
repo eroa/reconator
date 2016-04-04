@@ -7,7 +7,7 @@ import csv
 
 nm = nmap.PortScanner()
 nm.scan(hosts='127.0.0.1', arguments='-sT -sV  -vvv -oN /tmp/testgrep')
-
+nall = nm.all_hosts()
 ncsv = nm.csv()
 ndict = nm.analyse_nmap_xml_scan(())
 nlast = nm.get_nmap_last_output()
