@@ -1,5 +1,3 @@
-
-# -*- coding: utf-8 -*-
 import nmap
 import sys
 import multiprocessing
@@ -28,9 +26,9 @@ def multProc(targetin, scanip):
 
 def httpenum(targets):
     print("2DO NIKTOSCAN" )
-#    multProc("")
+    #multProc("")
     #sNIKTO =
-    os.system("nikto -host localhost")
+    os.system("nikto -host {0} |tee /tmp/nikto_reconatoor_{1}".format(targets, targets))
     #subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
 
@@ -39,13 +37,14 @@ def httpenum(targets):
 def do_scan(targets):
     parsed = None
     nm = nmap.PortScanner()
-    nm.scan(hosts=targets,
-            arguments='-sV -sT -T5 -vvv -Pn -oN "/home/auh/workspace/reconator/core/results/reconator_%s"' % targets)
+    nm.scan(hosts=targets, arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconatoor_%s"' % targets)
+
 #   subprocess.process()
 
     ncsv = nm.csv()
-    r = csv.reader(ncsv)
-    nmenm = '/tmp/nm_reco_%s' % targets
+    # ndict = nm.get_nmap_last_output()
+    # nmdict = '/tmp/nm_dict_{0}'.format(ndict)
+    nmenm = '/tmp/nm_reco_{0}'.format(targets)
     f = open(nmenm, 'w')
     f.write(ncsv)
     f.close()
@@ -71,8 +70,11 @@ def do_scan(targets):
         lport.sort()
         for port in lport:
             print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
-        print('----------------------------------------------------')
-
+            print('----------------------------------------------------')
+            serv = list(nm[host][proto][port].keys())
+            serv.sort()
+            for s in serv:
+                print('port: {0}\ ')
 
 #    fncsv = ncsv.split("\n", 1)[1:]
     fncsv = ncsv.split("\n",1)
