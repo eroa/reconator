@@ -22,3 +22,8 @@ print('----------------------------------------------------')
 print "Dico"
 print(type(ndict))
 print ndict
+# nmdict.itervalues()
+# nmdict.viewkeys()
+# nmdict.viewitems()
+# nmdict.values()
+# %hist
