@@ -3,34 +3,34 @@ import sys
 import multiprocessing
 import subprocess
 
-#import libnmap
-#import nmmapparser
-#import nmap_parser
-#from libnmap import NmapParser, NmapParserException
-#from libnmap import NmapProcess
+# import libnmap
+# import nmmapparser
+# import nmap_parser
+# from libnmap import NmapParser, NmapParserException
+# from libnmap import NmapProcess
 import re
 import csv
 import os
 
 
-
-	#jobs = []
-	#ip ="".join(scanip)
-	#sip = str(ip)#!/usr/bin/env python
+# jobs = []
+# ip ="".join(scanip)
+# sip = str(ip)#!/usr/bin/env python
 
 def multProc(targetin, scanip):
     jobs = []
-    fp = multiprocessing.Process(target=targetin, args=(str(scanip), ))
+    fp = multiprocessing.Process(target=targetin, args=(str(scanip),))
     jobs.append(fp)
     fp.start()
     return
 
+
 def httpenum(targets):
-    print("2DO NIKTOSCAN" )
-    #multProc("")
-    #sNIKTO =
+    print("2DO NIKTOSCAN")
+    # multProc("")
+    # sNIKTO =
     os.system("nikto -host {0} |tee /tmp/nikto_reconatoor_{1}".format(targets, targets))
-    #subprocess.call(["touch" "/tmp/recodev"])
+    # subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
 
 
@@ -41,7 +41,7 @@ def do_scan(targets):
     nm.scan(hosts=targets,
             arguments='-sV -sT -T5 -vvv -Pn -oN "/tmp/reconator_%s"' % targets)
 
-#   subprocess.process()
+    #   subprocess.process()
 
     ncsv = nm.csv()
     # ndict = nm.get_nmap_last_output()
@@ -53,7 +53,7 @@ def do_scan(targets):
     print('----------------------------------------------------')
     print("write nm_reco_*")
     print('----------------------------------------------------')
-#    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
+    #    subprocess.call("/home/toxic/workspace/reconator/core/format_nm.sh")
 
     for host in nm.all_hosts():
         print('----------------------------------------------------')
@@ -75,44 +75,42 @@ def do_scan(targets):
         print('----------------------------------------------------')
 
 
-#    fncsv = ncsv.split("\n", 1)[1:]
-    fncsv = ncsv.split("\n",1)
+    #    fncsv = ncsv.split("\n", 1)[1:]
+    fncsv = ncsv.split("\n", 1)
     print('----------------------------------------------------')
     print('csv')
     print('----------------------------------------------------')
     print(ncsv)
     print('----------------------------------------------------')
 
-    for row in fncsv :
+    for row in fncsv:
         if "http" in row:
             print(row)
             print("GOTCHA HTTP !!!!!")
-#            print("launch nikto...")
+            #            print("launch nikto...")
             for host in nm.all_hosts():
                 print("launch  proof %s " % str(host))
-                fhost =str("".join(host))
+                fhost = str("".join(host))
                 multProc(httpenum, fhost)
                 # try:
-            #subprocess.call('/usr/bin/nikto %s ' % host)
-            #subprocess.call('echo zob > "/tmp/recotouch" ')
+                # subprocess.call('/usr/bin/nikto %s ' % host)
+                # subprocess.call('echo zob > "/tmp/recotouch" ')
 
-            #except:
-             #   print('vnikto failed')
+                # except:
+                #   print('vnikto failed')
         else:
             print("pas de http")
             print('----------------------------------------------------')
 
-       # matchttp = re.search(r'http', str(row))
+            # matchttp = re.search(r'http', str(row))
     print('###########################################################')
-
-
 
     return parsed
 
 
 if __name__ == "__main__":
-#    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
-    f =open(sys.argv[1],   'r')
+    #    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
+    f = open(sys.argv[1], 'r')
     for ip in f:
         report = multiprocessing.Process(target=do_scan, args=(ip,))
         report.start()
