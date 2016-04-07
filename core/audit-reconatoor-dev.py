@@ -13,7 +13,7 @@ import re
 import csv
 import os
 
-os.mkdir("/tmp/results", "0777")
+os.mkdir("/tmp/results", 0777)
 # jobs = []
 # ip ="".join(scanip)
 # sip = str(ip)

@@ -102,7 +102,7 @@ def do_scan(targets):
 
 if __name__ == "__main__":
     #    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
-    os.mkdir("/tmp/results", "0777")
+    os.mkdir("/tmp/results", 0777)
     f = open(sys.argv[1], 'r')
     for ip in f:
         report = multiprocessing.Process(target=do_scan, args=(ip,))
