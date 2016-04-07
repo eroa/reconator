@@ -13,7 +13,7 @@ import re
 import csv
 import os
 
-os.mkdir("/tmp/results", 0777)
+
 # jobs = []
 # ip ="".join(scanip)
 # sip = str(ip)
@@ -34,7 +34,7 @@ def httpenum(targets, ports):
     print "targets; " + targetformat
     # multProc("")
     os.system("nikto -host {0} |tee /tmp/reconatoor_{1}".format(targetformat, targetformat))
-    # subprocess.call(["touch" "/tmp/recodev"])
+
     # TODO  add port suppport
 
 
@@ -102,6 +102,7 @@ def do_scan(targets):
 
 if __name__ == "__main__":
     #    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
+    os.mkdir("/tmp/results", 0777)
     f = open(sys.argv[1], 'r')
     for ip in f:
         report = multiprocessing.Process(target=do_scan, args=(ip,))
