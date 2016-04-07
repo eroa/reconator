@@ -18,19 +18,17 @@ import os
 # ip ="".join(scanip)
 # sip = str(ip)
 
-def multProc(targetin, scanip, port):
+def multProc(targetin, scanip):
     jobs = []
-    fp = multiprocessing.Process(target=targetin, args=(scanip,port))
+    fp = multiprocessing.Process(target=targetin, args=(str(scanip),))
     jobs.append(fp)
     fp.start()
     return
 
 
-def httpenum(targets, ports):
+def httpenum(targets):
     print("NIKTOSCAN")
     targetformat=  str(targets)
-    portformat = str(ports)
-    formata = str(targetformat) + ":" + str(portformat)
     print "targets; " + targetformat
     # multProc("")
     os.system("nikto -host {0} |tee /tmp/reconatoor_{1}".format(targetformat, targetformat))
@@ -67,9 +65,8 @@ def do_scan(targets):
                 print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
                 if "http" in str(state):
                     print "PORT:" + str(port) + "   gotcha (http via dict)!!!"
-                    #TODO stock dans tuple?
                     formata = str(host)+":"+str(port)
-                    multProc(httpenum, str(host),str(port))
+                    multProc(httpenum, formata)
                     print('----------------------------------------------------')
                 else:
                     print "no http"

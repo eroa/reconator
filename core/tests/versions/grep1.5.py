@@ -14,13 +14,11 @@ nm.scan(hosts='127.0.0.1', arguments='-sT -sV  -vvv -oN /tmp/testgrep')
 
 ncsv = nm.csv()
 #ndict = nm.analyse_nmap_xml_scan(())
-#nlast = nm.get_nmap_last_output()
+nlast = nm.get_nmap_last_output()
 #nmdict = '/tmp/nm_dict_{0}'.format(ndict)
-#nmlast = '/tmp/nm_last_{0}'.format(nlast)
+nmlast = '/tmp/nm_last_{0}'.format(nlast)
 nmcsv = '/tmp/nm_csv_{0}'.format("localhost")
 f = open(nmcsv, 'w')
-f.write(ncsv)
-f.close()
 
 for host in nm.all_hosts():
     for proto in nm[host].all_protocols():
@@ -28,11 +26,11 @@ for host in nm.all_hosts():
         lport = list(nm[host][proto].keys())
         lport.sort()
         for port in lport:
-            state =  str(nm[host][proto][port])
-            print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
+            state =  nm[host][proto][port]
+            print('port : {0}\tstate : {1}'.format(port, state))
             if "tor" in str(state):
-                print "PORT:"+ str(port) +"   gotcha tor !!!"
-                print('----------------------------------------------------')
+                print "AAAAAAAAAAAAAAAAAAAAAAAAAA"
+        print('----------------------------------------------------')
         lprod = list(nm[host][proto][port].keys())
         lprod.sort()
         print str(lprod)

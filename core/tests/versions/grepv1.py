@@ -8,21 +8,21 @@ import csv
 nm = nmap.PortScanner()
 nm.scan(hosts='127.0.0.1', arguments='-sT -sV  -vvv -oN /tmp/testgrep')
 ncsv = nm.csv()
-fncsv = ncsv.split("\n",1)
-for row in fncsv :
-	if "tor" in row:
-		print(row)
-        print("GOTCHA HTTP !!!!!")
-#            print("launch nikto...")
-        for host in nm.all_hosts():
-            print("launch  proof %s " % str(host))
-            fhost = str("".join(host))
-            os.system("nikto -host %s" % host)
+fncsv = ncsv.split("\n", 1)
+for row in fncsv:
+    if "tor" in row:
+        print(row)
+    print("GOTCHA HTTP !!!!!")
+    #            print("launch nikto...")
+    for host in nm.all_hosts():
+        print("launch  proof %s " % str(host))
+        fhost = str("".join(host))
+        os.system("nikto -host %s" % host)
 if 'tor' in ncsv:
-	print "victory"
+    print "victory"
 
 else:
-	print "zob"
+    print "zob"
 
 for host in nm.all_hosts():
     print('----------------------------------------------------')
@@ -48,4 +48,4 @@ for host in nm.all_hosts():
         foo = {0}.str(lprod[4])
         print foo
         for prod in lprod:
-	        print('prod : {0}'.format(nm[host][proto][port][product]))
+            print('prod : {0}'.format(nm[host][proto][port][product]))
