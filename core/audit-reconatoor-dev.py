@@ -102,6 +102,8 @@ def do_scan(targets):
 
 if __name__ == "__main__":
     #    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
+    if os.path.isdir("/tmp/results")== True:
+        print"results exist"
     os.mkdir("/tmp/results", 0777)
     f = open(sys.argv[1], 'r')
     for ip in f:
