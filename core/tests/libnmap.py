@@ -1,29 +1,21 @@
-import nmap
-
-nm = nmap.PortScanner()
-nm.scan(hosts='127.0.0.1', arguments='-sV -sT -oN "/tmp/libnmap.{0}.format(hosts)"')
-ncsv = nm.csv()
-nlast = nm.get_nmap_last_output()
-ndict = nm.analyse_nmap_xml_scan()
-
-print('----------------------------------------------------')
-print "CSV:"
-print(type(ncsv))
-print ncsv
+import libnmap
+import libnmap.process
+import libnmap.parser
+import libnmap.objects
+from libnmap.process import NmapProcess, NmapTask
+from libnmap.objects import NmapService, NmapHost, NmapReport
+from libnmap.parser import NmapParser, NmapParserException
 
 
-print('----------------------------------------------------')
-print "XML last"
-print(type(nlast))
-print nlast
+#Scanner TODO
+nm = libnmap.process.NmapProcess(targets='127.0.0.1',arguments='-sV -sT -oN "/tmp/libnmap"')
+rc= nm.run()
+f = open("/tmp/libnmap.xml", 'w' )
+f.write(nm.stdout)
+f.close()
 
 
-print('----------------------------------------------------')
-print "Dico"
-print(type(ndict))
-print ndict
-# nmdict.itervalues()
-# nmdict.viewkeys()
-# nmdict.viewitems()
-# nmdict.values()
-# %hist
+#Parser TODO
+rep = libnmap.parser.NmapParser.parse_fromfile('/tmp/libnmap.xml')
+print("nmap {0}/{1} hosts up".format(rep.hosts_up, rep.hosts_total))
+
