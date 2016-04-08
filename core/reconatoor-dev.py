@@ -151,4 +151,4 @@ if __name__ == "__main__":
 	for ip in f:
 		report = multiprocessing.Process(target=do_scan, args=(ip,))
 		report.start()
-	f.close()
+f.close()

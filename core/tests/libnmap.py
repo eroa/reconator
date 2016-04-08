@@ -19,3 +19,5 @@ f.close()
 rep = libnmap.parser.NmapParser.parse_fromfile('/tmp/libnmap.xml')
 print("nmap {0}/{1} hosts up".format(rep.hosts_up, rep.hosts_total))
 
+#objects TODO service report
+serv = NmapService()
