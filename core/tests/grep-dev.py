@@ -50,53 +50,53 @@ for line in lines:
   ports = []
   line = line.strip()
   if ("tcp" in line) and ("open" in line) and not ("Discovered" in line):
- while "  " in line:
-		line = line.replace("  ", " ");
-	 linesplit= line.split(" ")
-	 service = linesplit[2] # grab the service name
- port = line.split(" ")[0] # grab the port/proto
-	 if service in serv_dict:
+while "  " in line:
+	line = line.replace("  ", " ");
+	linesplit= line.split(" ")
+	service = linesplit[2] # grab the service name
+port = line.split(" ")[0] # grab the port/proto
+if service in serv_dict:
 	ports = serv_dict[service] # if the service is already in the dict, grab the port list
 
-	 ports.append(port)
- serv_dict[service] = ports # add service to the dictionary along with the associated port(2)
+	ports.append(port)
+serv_dict[service] = ports # add service to the dictionary along with the associated port(2)
 
 # go through the service dictionary to call additional targeted enumeration functions
 for serv in serv_dict:
-  ports = serv_dict[serv]
-  if (serv == "http"):
+	ports = serv_dict[serv]
+	if (serv == "http"):
 for port in ports:
 	port = port.split("/")[0]
 	multProc(httpEnum, ip_address, port)
-  elif (serv == "ssl/http") or ("https" in serv):
+	elif (serv == "ssl/http") or ("https" in serv):
 for port in ports:
 	port = port.split("/")[0]
 	multProc(httpsEnum, ip_address, port)
-  elif "ssh" in serv:
+	elif "ssh" in serv:
 for port in ports:
 	port = port.split("/")[0]
 	multProc(sshEnum, ip_address, port)
-  elif "smtp" in serv:
+	elif "smtp" in serv:
 for port in ports:
 	port = port.split("/")[0]
 	multProc(smtpEnum, ip_address, port)
-  elif "snmp" in serv:
+	elif "snmp" in serv:
 for port in ports:
 	port = port.split("/")[0]
 	multProc(snmpEnum, ip_address, port)
-  elif ("domain" in serv):
+	elif ("domain" in serv):
 for port in ports:
 	port = port.split("/")[0]
 	multProc(dnsEnum, ip_address, port)
-elif ("ftp" in serv):
+	elif ("ftp" in serv):
 for port in ports:
 	port = port.split("/")[0]
 	multProc(ftpEnum, ip_address, port)
-elif "microsoft-ds" in serv:
+	elif "microsoft-ds" in serv:
 	for port in ports:
 		port = port.split("/")[0]
 		multProc(smbEnum, ip_address, port)
-elif "ms-sql" in serv:
+	elif "ms-sql" in serv:
 	for port in ports:
 		port = port.split("/")[0]
 		multProc(httpEnum, ip_address, port)lines = results.split("\n")
@@ -117,39 +117,39 @@ for line in lines:
 # go through the service dictionary to call additional targeted enumeration functions
 for serv in serv_dict:
   	ports = serv_dict[serv]
-  if (serv == "http"):
- for port in ports:
-	port = port.split("/")[0]
-	multProc(httpEnum, ip_address, port)
-  elif (serv == "ssl/http") or ("https" in serv):
- for port in ports:
-	port = port.split("/")[0]
-	multProc(httpsEnum, ip_address, port)
-  elif "ssh" in serv:
- for port in ports:
-	port = port.split("/")[0]
-	multProc(sshEnum, ip_address, port)
-  elif "smtp" in serv:
- for port in ports:
-	port = port.split("/")[0]
-	multProc(smtpEnum, ip_address, port)
-  elif "snmp" in serv:
- for port in ports:
-	port = port.split("/")[0]
-	multProc(snmpEnum, ip_address, port)
-  elif ("domain" in serv):
- for port in ports:
-	port = port.split("/")[0]
-	multProc(dnsEnum, ip_address, port)
-  elif ("ftp" in serv):
- for port in ports:
-	port = port.split("/")[0]
-	multProc(ftpEnum, ip_address, port)
-  elif "microsoft-ds" in serv:
- for port in ports:
-	port = port.split("/")[0]
-	multProc(smbEnum, ip_address, port)
-  elif "ms-sql" in serv:
- for port in ports:
-	port = port.split("/")[0]
-	multProc(httpEnum, ip_address, port)
+if (serv == "http"):
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(httpEnum, ip_address, port)
+elif (serv == "ssl/http") or ("https" in serv):
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(httpsEnum, ip_address, port)
+elif "ssh" in serv:
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(sshEnum, ip_address, port)
+elif "smtp" in serv:
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(smtpEnum, ip_address, port)
+elif "snmp" in serv:
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(snmpEnum, ip_address, port)
+elif ("domain" in serv):
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(dnsEnum, ip_address, port)
+elif ("ftp" in serv):
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(ftpEnum, ip_address, port)
+elif "microsoft-ds" in serv:
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(smbEnum, ip_address, port)
+elif "ms-sql" in serv:
+	for port in ports:
+		port = port.split("/")[0]
+		multProc(httpEnum, ip_address, port)
