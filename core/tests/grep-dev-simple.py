@@ -1,16 +1,10 @@
-from itertools import product
-
 import nmap
-import os
-import re
-import multiprocessing
-import subprocess
-import csv
 
 
 nm = nmap.PortScanner()
-nm.scan(hosts='127.0.0.1' ,arguments='-sS -sV -sC -A -vvvv -oN "/tmp/grepsudo"', sudo=True)
-nxml = nm.get_nmap_last_output()
+nm.scan(hosts='127.0.0.1', arguments='-sS -sV  -oN "/tmp/grepsimple"', sudo='True')
+
+nlast = nm.get_nmap_last_output()
 ndict = nm.analyse_nmap_xml_scan()
 
 for host in nm.all_hosts():
