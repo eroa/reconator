@@ -15,9 +15,6 @@
     <orderEntry type="jdk" jdkName="Python 2.7.11+ (/usr/bin/python2.7)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="exos" />
-    <orderEntry type="module" module-name="exos" />
-    <orderEntry type="module" module-name="exos" />
-    <orderEntry type="module" module-name="exos" />
     <orderEntry type="module" module-name="autoenum" />
   </component>
   <component name="TestRunnerService">

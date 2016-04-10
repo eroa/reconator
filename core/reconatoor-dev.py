@@ -65,13 +65,20 @@ def torenum(targets, ports):
 def mssql(targets, ports):
 	print "mssql  on " + targets + ":" + ports
 
+def callscript(targets, ports):
+	print "CALL SCRIPT"
+	text = "targets: " + targets + "\tports:" + ports
+	f = open("/tmp/callscript_{0}_{1}".format(targets, ports), "w")
+	f.write(text)
+	f.close()
 
-# start a new nmap scan on localhost with some specific options
+
+	# start a new nmap scan on localhost with some specific options
 def do_scan(targets):
 	parsed = None
 	nm = nmap.PortScanner()
 	nm.scan(hosts=targets,
-			arguments='-sV -sT  -sC -T5 -vvv -Pn -oN "/tmp/results/reconator_%s"' % targets)
+			arguments='-sV -sS -vvv -Pn -oN "/tmp/results/reconator_%s"' % targets, sudo=True)
 #TODO add sudo port scan
 
 	#   subprocess.process()
@@ -98,7 +105,8 @@ def do_scan(targets):
 					print "PORT:" + str(port) + "   gotcha (http via dict)!!!"
 					# TODO multiserv
 					# formata = str(host)+":"+str(port)
-					multProc(httpenum, str(host), str(port))
+					#multProc(httpenum, str(host), str(port))
+					multProc(callscript, str(host), str(port))
 					print('----------------------------------------------------')
 				elif "ssh" in str(state):
 					multProc(sshenum, str(host), str(port))
