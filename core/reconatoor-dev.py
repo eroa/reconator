@@ -73,7 +73,7 @@ def callscript(targets, ports):
 	f.close()
 
 
-	# start a new nmap scan on localhost with some specific options
+# start a new nmap scan on localhost with some specific options
 def do_scan(targets):
 	parsed = None
 	nm = nmap.PortScanner()
