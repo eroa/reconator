@@ -7,6 +7,11 @@ nm.scan(hosts='127.0.0.1', arguments='-sS -sV  -oN "/tmp/grepsimple"', sudo='Tru
 nlast = nm.get_nmap_last_output()
 ndict = nm.analyse_nmap_xml_scan()
 
+ndict.itervalues()
+a = ndict.viewvalues()
+print "***********************"
+print str(a)
+print "***********************"
 for host in nm.all_hosts():
     print host
     print('----------------------------------------------------')
@@ -20,4 +25,6 @@ for host in nm.all_hosts():
             print type(nm[host][proto][port])
             state = str(nm[host][proto][port])
             print('proto: {0}\tstate: {1})'.format(port, nm[host][proto][port]))
+            lstate = list(nm[host][proto][port].keys())
 #TODO grep deeper dict
+
