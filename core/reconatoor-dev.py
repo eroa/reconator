@@ -72,7 +72,6 @@ def callscript(targets, ports):
 	f.write(text)
 	f.close()
 
-
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
 	parsed = None
@@ -105,7 +104,7 @@ def do_scan(targets):
 					print "PORT:" + str(port) + "   gotcha (http via dict)!!!"
 					# TODO multiserv
 					# formata = str(host)+":"+str(port)
-					#multProc(httpenum, str(host), str(port))
+					multProc(httpenum, str(host), str(port))
 					multProc(callscript, str(host), str(port))
 					print('----------------------------------------------------')
 				elif "ssh" in str(state):
