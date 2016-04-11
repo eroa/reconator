@@ -10,8 +10,8 @@ ndict = nm.analyse_nmap_xml_scan()
 ndict.itervalues()
 a = ndict.viewvalues()
 print "***********************"
-print str(a)
 print "***********************"
+print str(a)
 for host in nm.all_hosts():
     print host
     print('----------------------------------------------------')
