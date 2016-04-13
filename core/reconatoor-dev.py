@@ -48,8 +48,8 @@ def httpenum(targets, ports):
 	results = subprocess.check_output(TCPSCAN, shell=True)
 	udpresults = subprocess.check_output(UDPSCAN, shell=True)
 	lines = results.split("\n")
-	NIKTO = "nikto -host {0} |tee /tmp/nikto_reco_{1}".format(targetformat, targetformat)
-	DIRB= "dirb http://{0}".format(targetformat)
+	NIKTO = "nikto -host {0} |tee /tmp/results/nikto_reco_{1}".format(targetformat, targetformat)
+	DIRB = "dirb http://{0}|tee /tmp/results/dirb_reco{1}".format(targetformat, targetformat)
 	subprocess.call(NIKTO, shell=True)
 	subprocess.call(DIRB, shell=True)
 
@@ -100,8 +100,14 @@ def do_scan(targets):
 
 	nmt.scan(hosts=targets, arguments="nmap -vv -Pn -A -sC -sS -T 4  -oN '/tmp/results/nmap/%s.nmap'%s " % (
 	targetformat, targetformat ),sudo=True)
-	nmu.scan(hosts=targets,arguments= "nmap -vv -Pn -A -sC -sU -T 4 --top-ports 30 -oN '/tmp/results/nmap/%sU.nmap' %s" % (
-	targetformat, targetformat),sudo=True)
+	# nmu.scan(hosts=targets,arguments= "nmap -vv -Pn -A -sC -sU -T 4 --top-ports 30 -oN '/tmp/results/nmap/%sU.nmap' %s" % (
+	# targetformat, targetformat),sudo=True)
+	nmtall = nmt.all_hosts()
+	nmtxml = nmt.get_nmap_last_output()
+	nmtdict = nmt.analyse_nmap_xml_scan()
+	print nmtxml
+
+
 	#   subprocess.process()
 
 	# ncsvt = nmt.csv()
@@ -114,7 +120,7 @@ def do_scan(targets):
 	# print("write nm_csv_{0}".format(targets))
 	# print('----------------------------------------------------')
 
-	for host in nmt.all_hosts():
+	for host in nmtall:
 		for proto in nmt[host].all_protocols():
 			print('Protocol : {0}'.format(proto))
 			lport = list(nmt[host][proto].keys())
@@ -128,6 +134,8 @@ def do_scan(targets):
 					# formata = str(host)+":"+str(port)
  					multProc(httpenum, str(host), str(port))
 					multProc(callscript, str(host), str(port))
+					print('----------------------------------------------------')
+					print nmt[host][proto][port][name]
 					print('----------------------------------------------------')
 				elif "ssh" in str(state):
 					multProc(sshenum, str(host), str(port))
