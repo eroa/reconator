@@ -28,14 +28,31 @@ def multProc(targetin, scanip, port):
 
 
 def httpenum(targets, ports):
+	if os.path.isdir("/tmp/results/nmap") == True:
+		print "/tmp/results/nmap exists"
+	else:
+		os.mkdir("/tmp/results/nmap", 0777)
 	print("NIKTOSCAN")
 	targetformat = str(targets)
 	portformat = str(ports)
 	formata = str(targetformat) + ":" + str(portformat)
 	print "targets; " + targetformat
 	# multProc("")
-	os.system("nikto -host {0} |tee /tmp/nikto_reco_{1}".format(targetformat, targetformat))
+#	os.system("nikto -host {0} |tee /tmp/nikto_reco_{1}".format(targetformat, targetformat))
 	# subprocess.call(["touch" "/tmp/recodev"])
+	serv_dict = {}
+	TCPSCAN = "nmap -vv -Pn -A -sC -sS -T 4 -p- -oN '/tmp/results/nmap/%s.nmap' -oX '/tmp/results/nmap/%s_nmap_scan_import.xml' %s" % (
+	targetformat, targetformat, targetformat)
+	UDPSCAN = "nmap -vv -Pn -A -sC -sU -T 4 --top-ports 200 -oN '/tmp/results/nmap/%sU.nmap' -oX '/tmp/results/nmap/%sU_nmap_scan_import.xml' %s" % (
+	targetformat, targetformat, targetformat)
+	results = subprocess.check_output(TCPSCAN, shell=True)
+	udpresults = subprocess.check_output(UDPSCAN, shell=True)
+	lines = results.split("\n")
+	NIKTO = "nikto -host {0} |tee /tmp/nikto_reco_{1}".format(targetformat, targetformat)
+	DIRB= "dirb http://{0}".format(targetformat)
+	subprocess.call(NIKTO, shell=True)
+	subprocess.call(DIRB, shell=True)
+
 	# TODO  add port suppport
 
 
@@ -75,36 +92,41 @@ def callscript(targets, ports):
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
 	parsed = None
-	nm = nmap.PortScanner()
-	nm.scan(hosts=targets,
-			arguments='-sV -sS -vvv -Pn -oN "/tmp/results/reconator_%s"' % targets, sudo=True)
-#TODO add sudo port scan
+	targetformat=str(targets)
+	nmt = nmap.PortScanner()
+	nmu =nmap.PortScanner()
+	#nm.scan(hosts=targets,
+			#arguments='-sV -sS -vvv -Pn -oN "/tmp/results/reconator_first_%s"' % targets, sudo=True)
 
+	nmt.scan(hosts=targets, arguments="nmap -vv -Pn -A -sC -sS -T 4  -oN '/tmp/results/nmap/%s.nmap'%s " % (
+	targetformat, targetformat ),sudo=True)
+	nmu.scan(hosts=targets,arguments= "nmap -vv -Pn -A -sC -sU -T 4 --top-ports 30 -oN '/tmp/results/nmap/%sU.nmap' %s" % (
+	targetformat, targetformat),sudo=True)
 	#   subprocess.process()
 
-	ncsv = nm.csv()
+	# ncsvt = nmt.csv()
+	#
+	# nmcsv = '/tmp/nm_csv_{0}'.format(targets)
+	# f = open(nmcsv, 'w')
+	# f.write(ncsv)
+	# f.close()
+	# print('----------------------------------------------------')
+	# print("write nm_csv_{0}".format(targets))
+	# print('----------------------------------------------------')
 
-	nmcsv = '/tmp/nm_csv_{0}'.format(targets)
-	f = open(nmcsv, 'w')
-	f.write(ncsv)
-	f.close()
-	print('----------------------------------------------------')
-	print("write nm_csv_{0}".format(targets))
-	print('----------------------------------------------------')
-
-	for host in nm.all_hosts():
-		for proto in nm[host].all_protocols():
+	for host in nmt.all_hosts():
+		for proto in nmt[host].all_protocols():
 			print('Protocol : {0}'.format(proto))
-			lport = list(nm[host][proto].keys())
+			lport = list(nmt[host][proto].keys())
 			lport.sort()
 			for port in lport:
-				state = nm[host][proto][port]
-				print('port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
+				state = nmt[host][proto][port]
+				print('port : {0}\tstate : {1}'.format(port, nmt[host][proto][port]))
 				if "http" in str(state):
 					print "PORT:" + str(port) + "   gotcha (http via dict)!!!"
 					# TODO multiserv
 					# formata = str(host)+":"+str(port)
-					multProc(httpenum, str(host), str(port))
+ 					multProc(httpenum, str(host), str(port))
 					multProc(callscript, str(host), str(port))
 					print('----------------------------------------------------')
 				elif "ssh" in str(state):
@@ -120,7 +142,7 @@ def do_scan(targets):
 				elif "ms-sql" in str(state):
 					multProc(mssqlenum, str(host), str(port))
 
-
+#TODO utiliser resultats nmu
 					# fncsv = ncsv.split("\n", 1)
 					# print('----------------------------------------------------')
 					# print('csv')
@@ -143,7 +165,7 @@ def do_scan(targets):
 
 
 					# matchttp = re.search(r'http', str(row))
-	print('###########################################################')
+	print('#######################  nmt host: {0}    ####################################'.format(targetformat))
 
 	return parsed
 
