@@ -41,17 +41,19 @@ def httpenum(targets, ports):
 #	os.system("nikto -host {0} |tee /tmp/nikto_reco_{1}".format(targetformat, targetformat))
 	# subprocess.call(["touch" "/tmp/recodev"])
 	serv_dict = {}
-	TCPSCAN = "nmap -vv -Pn -A -sC -sS -T 4 -p- -oN '/tmp/results/nmap/%s.nmap' -oX '/tmp/results/nmap/%s_nmap_scan_import.xml' %s" % (
+	TCPSCAN = "sudo nmap -vv -Pn -A -sC -sS -T 4 -p- -oN '/tmp/results/nmap/%s.nmap' -oX '/tmp/results/nmap/%s_nmap_scan_import.xml' %s" % (
 	targetformat, targetformat, targetformat)
-	UDPSCAN = "nmap -vv -Pn -A -sC -sU -T 4 --top-ports 200 -oN '/tmp/results/nmap/%sU.nmap' -oX '/tmp/results/nmap/%sU_nmap_scan_import.xml' %s" % (
+	UDPSCAN = "sudo nmap -vv -Pn -A -sC -sU -T 4 --top-ports 200 -oN '/tmp/results/nmap/%sU.nmap' -oX '/tmp/results/nmap/%sU_nmap_scan_import.xml' %s" % (
 	targetformat, targetformat, targetformat)
 	results = subprocess.check_output(TCPSCAN, shell=True)
 	udpresults = subprocess.check_output(UDPSCAN, shell=True)
 	lines = results.split("\n")
 	NIKTO = "nikto -host {0} |tee /tmp/results/nikto_reco_{1}".format(targetformat, targetformat)
-	DIRB = "dirb http://{0}|tee /tmp/results/dirb_reco{1}".format(targetformat, targetformat)
+	# DIRB = "dirb http://{0}|tee /tmp/results/dirb_reco{1}".format(targetformat, targetformat)
 	subprocess.call(NIKTO, shell=True)
-	subprocess.call(DIRB, shell=True)
+
+
+#subprocess.call(DIRB, shell=True)
 
 	# TODO  add port suppport
 
@@ -108,17 +110,7 @@ def do_scan(targets):
 	print nmtxml
 
 
-	#   subprocess.process()
 
-	# ncsvt = nmt.csv()
-	#
-	# nmcsv = '/tmp/nm_csv_{0}'.format(targets)
-	# f = open(nmcsv, 'w')
-	# f.write(ncsv)
-	# f.close()
-	# print('----------------------------------------------------')
-	# print("write nm_csv_{0}".format(targets))
-	# print('----------------------------------------------------')
 
 	for host in nmtall:
 		for proto in nmt[host].all_protocols():
@@ -134,9 +126,9 @@ def do_scan(targets):
 					# formata = str(host)+":"+str(port)
  					multProc(httpenum, str(host), str(port))
 					multProc(callscript, str(host), str(port))
-					print('----------------------------------------------------')
-					print nmt[host][proto][port][name]
-					print('----------------------------------------------------')
+				# print('----------------------------------------------------')
+				# print nmt[host][proto][port][name]
+				# print('----------------------------------------------------')
 				elif "ssh" in str(state):
 					multProc(sshenum, str(host), str(port))
 				elif "snmp" in str(state):
@@ -151,28 +143,7 @@ def do_scan(targets):
 					multProc(mssqlenum, str(host), str(port))
 
 #TODO utiliser resultats nmu
-					# fncsv = ncsv.split("\n", 1)
-					# print('----------------------------------------------------')
-					# print('csv')
-					# print('----------------------------------------------------')
-					# print(ncsv)
-					# print('----------------------------------------------------')
-					#
-					# for row in fncsv:
-					#     if "http" in row:
-					#         print(row)
-					#         print("GOTCHA http (via csv) !!!!!")
-					#         #            print("launch nikto...")
-					#         for host in nm.all_hosts():
-					#             print("launch  httpenum_{0}".format(str(host)))
-					#             fhost = str("".join(host))
-					#             multProc(httpenum, fhost)
-					#     else:
-					#         print("pas de http")
-					#         print('----------------------------------------------------')
 
-
-					# matchttp = re.search(r'http', str(row))
 	print('#######################  nmt host: {0}    ####################################'.format(targetformat))
 
 	return parsed
@@ -184,6 +155,10 @@ if __name__ == "__main__":
 		print "/tmp/results exists"
 	else:
 		os.mkdir("/tmp/results", 0777)
+	if os.path.isdir("/tmp/results/nmap") == True:
+		print "/tmp/results/nmap exists"
+	else:
+		os.mkdir("/tmp/results/nmap", 0777)
 	f = open(sys.argv[1], 'r')
 	for ip in f:
 		report = multiprocessing.Process(target=do_scan, args=(ip,))
