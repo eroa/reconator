@@ -111,10 +111,10 @@ def do_scan(targets):
 	targetformat, targetformat ),sudo=True)
 	# nmu.scan(hosts=targets,arguments= "nmap -vv -Pn -A -sC -sU -T 4 --top-ports 30 -oN '/tmp/results/nmap/%sU.nmap' %s" % (
 	# targetformat, targetformat),sudo=True)
-	nmtall = nmt.all_hosts()
 	nmtxml = nmt.get_nmap_last_output()
 	nmtdict = nmt.analyse_nmap_xml_scan()
 	print nmtxml
+    nmtall = nmt.all_hosts()
 
 
 

@@ -28,7 +28,8 @@ for host in nm.all_hosts():
             print('proto: {0}\tstate: {1})'.format(port, nm[host][proto][port]))
             lstate = list(nm[host][proto][port].keys())
             lstate.sort()
-            print "###########" + lstate + "#############"""
+            print "###########" + lstate
+            {} + "#############"""
             # lsta
             for ar in lstate:
                 if "cpe" in ar:
