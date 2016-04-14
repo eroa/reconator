@@ -43,7 +43,7 @@ def httpenum(targets, ports):
 	serv_dict = {}
 	NIKTO = "nikto -host {0} -port {1}|tee /tmp/results/nikto_reco_{2}".format(targetformat, portformat, targetformat)
 	# DIRB = "dirb http://{0}|tee /tmp/results/dirb_reco{1}".format(targetformat, targetformat)
-	subprocess.call(NIKTO, shell=True)
+	# subprocess.call(NIKTO, shell=True)
 	print subprocess.check_output(NIKTO)
 	TCPSCAN = "sudo nmap -vv -Pn -A -sC -sS -T 4  -oN '/tmp/results/nmap/%s.nmap' -oX '/tmp/results/nmap/%s_nmap_scan_import.xml' %s" % (
 		str(targetformat), str(targetformat), str(targetformat))  # TODO  -p- à rajouter
