@@ -94,7 +94,7 @@ def mssql(targets, ports):
 def callscript(targets, ports):
 	print "CALL SCRIPT"
 	text = "targets: " + targets + "\tports:" + ports
-	f = open("/tmp/callscript_{0}_{1}".format(targets, ports), "w")
+	f = open("/tmp/results/callscript_{0}_{1}".format(targets, ports), "w")
 	f.write(text)
 	f.close()
 

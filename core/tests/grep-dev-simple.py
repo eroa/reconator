@@ -1,6 +1,7 @@
 import nmap
 
 
+
 nm = nmap.PortScanner()
 nm.scan(hosts='127.0.0.1', arguments='-sS -sV  -oN "/tmp/grepsimple"', sudo='True')
 
@@ -26,5 +27,11 @@ for host in nm.all_hosts():
             state = str(nm[host][proto][port])
             print('proto: {0}\tstate: {1})'.format(port, nm[host][proto][port]))
             lstate = list(nm[host][proto][port].keys())
+            lstate.sort()
+            print "###########" + lstate + "#############"""
+            # lsta
+            for ar in lstate:
+                if "cpe" in ar:
+                    print 'victory: {0}'.format(ar[0, 3, 7])
 #TODO grep deeper dict
 
