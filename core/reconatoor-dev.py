@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# -*- coding: utf-8 -*-
 
 import nmap
 import sys
@@ -41,16 +41,23 @@ def httpenum(targets, ports):
 #	os.system("nikto -host {0} |tee /tmp/nikto_reco_{1}".format(targetformat, targetformat))
 	# subprocess.call(["touch" "/tmp/recodev"])
 	serv_dict = {}
-	TCPSCAN = "sudo nmap -vv -Pn -A -sC -sS -T 4 -p- -oN '/tmp/results/nmap/%s.nmap' -oX '/tmp/results/nmap/%s_nmap_scan_import.xml' %s" % (
-	targetformat, targetformat, targetformat)
-	UDPSCAN = "sudo nmap -vv -Pn -A -sC -sU -T 4 --top-ports 200 -oN '/tmp/results/nmap/%sU.nmap' -oX '/tmp/results/nmap/%sU_nmap_scan_import.xml' %s" % (
-	targetformat, targetformat, targetformat)
-	results = subprocess.check_output(TCPSCAN, shell=True)
-	udpresults = subprocess.check_output(UDPSCAN, shell=True)
-	lines = results.split("\n")
-	NIKTO = "nikto -host {0} |tee /tmp/results/nikto_reco_{1}".format(targetformat, targetformat)
+	NIKTO = "nikto -host {0} -port {1}|tee /tmp/results/nikto_reco_{2}".format(targetformat, portformat, targetformat)
 	# DIRB = "dirb http://{0}|tee /tmp/results/dirb_reco{1}".format(targetformat, targetformat)
 	subprocess.call(NIKTO, shell=True)
+	print subprocess.check_output(NIKTO)
+	TCPSCAN = "sudo nmap -vv -Pn -A -sC -sS -T 4  -oN '/tmp/results/nmap/%s.nmap' -oX '/tmp/results/nmap/%s_nmap_scan_import.xml' %s" % (
+		str(targetformat), str(targetformat), str(targetformat))  # TODO  -p- à rajouter
+	UDPSCAN = "sudo nmap -vv -Pn -A -sC -sU -T 4 --top-ports 10 -oN '/tmp/results/nmap/%sU.nmap' -oX '/tmp/results/nmap/%sU_nmap_scan_import.xml' %s" % (
+		targetformat, targetformat, targetformat)  # TODO remttre top 200
+	results = subprocess.check_output(TCPSCAN, shell=True)
+	print "***************************************************************"
+	print "TCPRESULTS:" + results
+	print "***************************************************************"
+	udpresults = subprocess.check_output(UDPSCAN, shell=True)
+	print "UDPRESULTS:" + udpresults
+	print "***************************************************************"
+	lines = results.split("\n")
+
 
 
 #subprocess.call(DIRB, shell=True)
@@ -122,7 +129,6 @@ def do_scan(targets):
 				print('port : {0}\tstate : {1}'.format(port, nmt[host][proto][port]))
 				if "http" in str(state):
 					print "PORT:" + str(port) + "   gotcha (http via dict)!!!"
-					# TODO multiserv
 					# formata = str(host)+":"+str(port)
  					multProc(httpenum, str(host), str(port))
 					multProc(callscript, str(host), str(port))
