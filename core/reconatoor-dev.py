@@ -114,12 +114,12 @@ def do_scan(targets):
 	nmtxml = nmt.get_nmap_last_output()
 	nmtdict = nmt.analyse_nmap_xml_scan()
 	print nmtxml
-    nmtall = nmt.all_hosts()
+    # nmtall = nmt.all_hosts()
 
 
 
 
-	for host in nmtall:
+    for host in nmt.all_hosts():
 		for proto in nmt[host].all_protocols():
 			print('Protocol : {0}'.format(proto))
 			lport = list(nmt[host][proto].keys())
