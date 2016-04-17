@@ -28,6 +28,7 @@ def multProc(targetin, scanip, port):
     return
 
 
+
 def httpenum(targets, ports):
     if os.path.isdir("/tmp/results/nmap") == True:
         print "/tmp/results/nmap exists"
@@ -91,17 +92,45 @@ def torenum(targets, ports):
     print "tor on " + targets + ":" + ports
 
 
-def mssql(targets, ports):
+def msasql(targets, ports):
     print "mssql  on " + targets + ":" + ports
 
 
-def callscript(targets, ports):
+def writeTargets(targets, ports):
     print "CALL SCRIPT"
     text = "targets: " + targets + "\tports:" + ports
-    f = open("/tmp/results/callscript_{0}_{1}".format(targets, ports), "w")
+    f = open("/tmp/results/writeTargets_{0}_{1}".format(targets, ports), "w")
     f.write(text)
     f.close()
 
+def parsinglaunch(nm):
+    for host in nm.all_hosts():
+        for proto in nm[host].all_protocols():
+            print('Protocol : {0}'.format(proto))
+            lport = list(nm[host][proto].keys())
+            lport.sort()
+            for port in lport:
+                state = nm[host][proto][port]
+                print('TCP port : {0}\tstate : {1}'.format(port, nm[host][proto][port]))
+                if "http" in str(state):
+                    print "TCP PORT:" + str(port) + "   gotcha (http via dict)!!!"
+                    # formata = str(host)+":"+str(port)
+                    multProc(httpenum, str(host), str(port))
+                    multProc(writeTargets, str(host), str(port))
+                    # (------------------------------------')
+                elif "ssh" in str(state):
+                    multProc(sshenum, str(host), str(port))
+                elif "snmp" in str(state):
+                    multProc(snmpenum, str(host), str(port))
+                elif "ftp" in str(state):
+                    multProc(ftpenum, str(host), str(port))
+                elif "smb" in str(state):
+                    multProc(smbenum, str(host), str(port))
+                elif "tor" in str(state):
+                    multProc(torenum, str(host), str(port))
+                elif "ms-sql" in str(state):
+                    multProc(mssqlenum, str(host), str(port))
+                print('#######################  nm host: {0} port: {1} '.format(host, port))
 
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
@@ -124,67 +153,69 @@ def do_scan(targets):
     nmucsv = nmu.csv()
     nmudict = nmu.analyse_nmap_xml_scan()
     print "TCPSCAN: " + nmtcsv
+    parsinglaunch(nmt)
     print "UDPSCAN: " + nmucsv
-
-    for host in nmt.all_hosts():
-        for proto in nmt[host].all_protocols():
-            print('Protocol : {0}'.format(proto))
-            lport = list(nmt[host][proto].keys())
-            lport.sort()
-            for port in lport:
-                state = nmt[host][proto][port]
-                print('TCP port : {0}\tstate : {1}'.format(port, nmt[host][proto][port]))
-                if "http" in str(state):
-                    print "TCP PORT:" + str(port) + "   gotcha (http via dict)!!!"
-                    # formata = str(host)+":"+str(port)
-                    multProc(httpenum, str(host), str(port))
-                    multProc(callscript, str(host), str(port))
-                    # (------------------------------------')
-                elif "ssh" in str(state):
-                    multProc(sshenum, str(host), str(port))
-                elif "snmp" in str(state):
-                    multProc(snmpenum, str(host), str(port))
-                elif "ftp" in str(state):
-                    multProc(ftpenum, str(host), str(port))
-                elif "smb" in str(state):
-                    multProc(smbenum, str(host), str(port))
-                elif "tor" in str(state):
-                    multProc(torenum, str(host), str(port))
-                elif "ms-sql" in str(state):
-                    multProc(mssqlenum, str(host), str(port))
-
-                    # TODO utiliser resultats nmu
-
-    print('#######################  nmt host: {0} '.format(targetformat))
-
-    for host in nmu.all_hosts():
-        for proto in nmu[host].all_protocols():
-            print('Protocol : {0}'.format(proto))
-            lport = list(nmu[host][proto].keys())
-            lport.sort()
-            for port in lport:
-                state = nmu[host][proto][port]
-                print('UDP port : {0}\tstate : {1}'.format(port, nmu[host][proto][port]))
-                if "http" in str(state):
-                    print "UDP PORT:" + str(port) + "   gotcha (http via dict)!!!"
-                    # formata = str(host)+":"+str(port)
-                    multProc(httpenum, str(host), str(port))
-                    multProc(callscript, str(host), str(port))
-                    # (------------------------------------')
-                elif "ssh" in str(state):
-                    multProc(sshenum, str(host), str(port))
-                elif "snmp" in str(state):
-                    multProc(snmpenum, str(host), str(port))
-                elif "ftp" in str(state):
-                    multProc(ftpenum, str(host), str(port))
-                elif "smb" in str(state):
-                    multProc(smbenum, str(host), str(port))
-                elif "tor" in str(state):
-                    multProc(torenum, str(host), str(port))
-                elif "ms-sql" in str(state):
-                    multProc(mssqlenum, str(host), str(port))
-
-    print('#######################  nmt host: {0} '.format(targetformat))
+    parsinglaunch(nmu)
+    # for host in nmt.all_hosts():
+    #     for proto in nmt[host].all_protocols():
+    #         print('Protocol : {0}'.format(proto))
+    #         lport = list(nmt[host][proto].keys())
+    #         lport.sort()
+    #         for port in lport:
+    #             state = nmt[host][proto][port]
+    #             print('TCP port : {0}\tstate : {1}'.format(port, nmt[host][proto][port]))
+    #             if "http" in str(state):
+    #                 print "TCP PORT:" + str(port) + "   gotcha (http via dict)!!!"
+    #                 # formata = str(host)+":"+str(port)
+    #                 multProc(httpenum, str(host), str(port))
+    #                 multProc(writeTargets, str(host), str(port))
+    #                 # (------------------------------------')
+    #             elif "ssh" in str(state):
+    #                 multProc(sshenum, str(host), str(port))
+    #             elif "snmp" in str(state):
+    #                 multProc(snmpenum, str(host), str(port))
+    #             elif "ftp" in str(state):
+    #                 multProc(ftpenum, str(host), str(port))
+    #             elif "smb" in str(state):
+    #                 multProc(smbenum, str(host), str(port))
+    #             elif "tor" in str(state):
+    #                 multProc(torenum, str(host), str(port))
+    #             elif "ms-sql" in str(state):
+    #                 multProc(mssqlenum, str(host), str(port))
+    #
+    #
+    #                 # TODO utiliser resultats nmu
+    #
+    # print('#######################  nmt host: {0} '.format(targetformat))
+    #
+    # for host in nmu.all_hosts():
+    #     for proto in nmu[host].all_protocols():
+    #         print('Protocol : {0}'.format(proto))
+    #         lport = list(nmu[host][proto].keys())
+    #         lport.sort()
+    #         for port in lport:
+    #             state = nmu[host][proto][port]
+    #             print('UDP port : {0}\tstate : {1}'.format(port, nmu[host][proto][port]))
+    #             if "http" in str(state):
+    #                 print "UDP PORT:" + str(port) + "   gotcha (http via dict)!!!"
+    #                 # formata = str(host)+":"+str(port)
+    #                 multProc(httpenum, str(host), str(port))
+    #                 multProc(callscript, str(host), str(port))
+    #                 # (------------------------------------')
+    #             elif "ssh" in str(state):
+    #                 multProc(sshenum, str(host), str(port))
+    #             elif "snmp" in str(state):
+    #                 multProc(snmpenum, str(host), str(port))
+    #             elif "ftp" in str(state):
+    #                 multProc(ftpenum, str(host), str(port))
+    #             elif "smb" in str(state):
+    #                 multProc(smbenum, str(host), str(port))
+    #             elif "tor" in str(state):
+    #                 multProc(torenum, str(host), str(port))
+    #             elif "ms-sql" in str(state):
+    #                 multProc(mssqlenum, str(host), str(port))
+    #
+    # print('#######################  nmt host: {0} '.format(targetformat))
 
     return parsed
 
