@@ -17,7 +17,6 @@ def multProc(targetin, scanip, port):
     return
 
 
-
 def httpenum(targets, ports):
     if os.path.isdir("/tmp/results/nmap") == True:
         print "/tmp/results/nmap exists"
@@ -92,6 +91,7 @@ def writeTargets(targets, ports):
     f.write(text)
     f.close()
 
+
 def parsinglaunch(nm):
     for host in nm.all_hosts():
         for proto in nm[host].all_protocols():
@@ -121,6 +121,7 @@ def parsinglaunch(nm):
                     multProc(mssqlenum, str(host), str(port))
                 print('#######################  nm host: {0} port: {1} '.format(host, port))
 
+
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
     parsed = None
@@ -147,6 +148,7 @@ def do_scan(targets):
     parsinglaunch(nmu)
 
     return parsed
+
 
 if __name__ == "__main__":
     #    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
