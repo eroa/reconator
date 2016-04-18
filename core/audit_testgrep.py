@@ -44,5 +44,5 @@ for host in nm.all_hosts():
         lprod = list(nm[host][proto][port].keys())
         lprod.sort()
 
-        for prod in lprod:
+        for p=`=jedi=0, rod in lprod:=`= (*_*value*_*, ..., sep=' ', end='\n', file=sys.stdout, flush=False) =`=jedi=`=
 	        print('prod : {0}'.format(nm[host][proto][port][product]))

@@ -42,6 +42,9 @@ def httpenum(target):
     #subprocess.call(["touch" "/tmp/recodev"])
     # TODO  check proof
 
+def callscript(target;port):
+    print "CALL SCRIPT /tmp/test.sh"
+
 
 # start a new nmap scan on iplist.txt  with some specific options
 def do_scan(targets):
