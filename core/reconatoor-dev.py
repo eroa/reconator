@@ -111,10 +111,11 @@ def writeTargets(targets, ports):
     f = open("/tmp/results/writeTargets_{0}_{1}".format(targets, ports), "w")
     f.write(text)
     f.close()
-    t = open("/tmp/results/all_targ_n_port.txt", "w")
-    d.append(targets + ":" + ports)
-    t.writelines(d)
-    t.close()
+    os.system("cat /tmp/results/write* > targetsscanned")
+    # t = open("/tmp/results/all_targ_n_port.txt", "w")
+    # d.append(targets + ":" + ports)
+    # t.writelines(d)
+    # t.close()
 
 def parsinglaunch(nm):
     for host in nm.all_hosts():
