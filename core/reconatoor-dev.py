@@ -54,7 +54,7 @@ def httpenum(targets, ports):
 
 # subprocess.call(DIRB, shell=True)
 
-# TODO  add port suppport
+# TODO  smbenum
 
 
 def smtpenum(targets, ports):
