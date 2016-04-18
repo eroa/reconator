@@ -91,7 +91,7 @@ def ftpenum(targets, ports):
     f.write(results)
     f.close()
 
-    print "Performing HYDRA BruteForce against: " + targetformat
+    print "Performing HYDRA Bruteforce against: " + targetformat
     HYDRA = "hydra -L /home/toxic/git/oscp/paillasse/users.txt -P /home/toxic/git/oscp/paillasse/passwords.txt -f -o /tmp/results/{0]_ftphydra.txt -u {1} {21] ftp".format(
         targetformat, targetformat, portformat)
     subprocess.call(HYDRA,shell=True)
