@@ -111,7 +111,7 @@ def writeTargets(targets, ports):
     f = open("/tmp/results/writeTargets_{0}_{1}".format(targets, ports), "w")
     f.write(text)
     f.close()
-    os.system("cat /tmp/results/write* > targetsscanned")
+    os.system("'cat /tmp/results/write*' >> '/tmp/results/targetsscanned'")
     # t = open("/tmp/results/all_targ_n_port.txt", "w")
     # d.append(targets + ":" + ports)
     # t.writelines(d)
@@ -157,7 +157,8 @@ def do_scan(targets):
 
     nmt.scan(hosts=targets, arguments="-vv -Pn   -sS -sV -sC  -oN '/tmp/results/nmap/first_{0}.nmap' {1} ".format(targetformat, targetformat), sudo=True)
     nmu.scan(hosts=targets,
-             arguments="-vv -Pn -A -sC -sU -T 4 --top-ports 1 -oN '/tmp/results/nmap/#first_{0}_UDP.nmap' {1}".format(targetformat, targetformat), sudo=True)
+             arguments="-vv -Pn -A -sC -sU -T 4 --top-ports 1 -oN '/tmp/results/nmap/first_{0}_UDP.nmap' {1}".format(
+                 targetformat, targetformat), sudo=True)
     nmtxml = nmt.get_nmap_last_output()
     nmtcsv = nmt.csv()
     nmtdict = nmt.analyse_nmap_xml_scan()
