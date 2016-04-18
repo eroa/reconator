@@ -44,10 +44,10 @@ def httpenum(targets, ports):
         targetformat, targetformat, targetformat)  # TODO remttre top 200
     results = subprocess.check_output(TCPSCAN, shell=True)
     print "***************************************************************"
-    print "TCPRESULTS:" + results
+    print "TCP RESULTS:" + results
     print "***************************************************************"
     udpresults = subprocess.check_output(UDPSCAN, shell=True)
-    print "UDPRESULTS:" + udpresults
+    print "UDP RESULTS:" + udpresults
     print "***************************************************************"
     lines = results.split("\n")
 
