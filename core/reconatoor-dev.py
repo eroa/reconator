@@ -94,6 +94,8 @@ def ftpenum(targets, ports):
     print "PERFORMING HYDRA BF AGAINST" + targetformat
     HYDRA = "hydra -L /home/toxic/git/oscp/paillasse/users.txt -P /home/toxic/git/oscp/paillasse/passwords.txt -f -o /tmp/results/{0]_ftphydra.txt -u {1} {21] ftp".format(
         targetformat, targetformat, portformat)
+    subprocess.call(HYDRA,shell=True)
+
 def torenum(targets, ports):
     print "tor on " + targets + ":" + ports
 
@@ -152,11 +154,9 @@ def do_scan(targets):
     # nm.scan(hosts=targets,
     # arguments='-sV -sS -vvv -Pn -oN "/tmp/results/reconator_first_%s"' % targets, sudo=True)
 
-    nmt.scan(hosts=targets, arguments="nmap -vv -Pn  -sC -sS -T 4  -oN '/tmp/results/nmap/%s.nmap'%s " % (
-        targetformat, targetformat), sudo=True)
+    nmt.scan(hosts=targets, arguments="-vv -Pn   -sS -sV -sC  -oN '/tmp/results/nmap/first_{0}.nmap' {1} ".format(targetformat, targetformat), sudo=True)
     nmu.scan(hosts=targets,
-             arguments="nmap -vv -Pn -A -sC -sU -T 4 --top-ports 1 -oN '/tmp/results/nmap/%sU.nmap' %s" % (
-                 targetformat, targetformat), sudo=True)
+             arguments="-vv -Pn -A -sC -sU -T 4 --top-ports 1 -oN '/tmp/results/nmap/#first_{0}_UDP.nmap' {1}".format(targetformat, targetformat), sudo=True)
     nmtxml = nmt.get_nmap_last_output()
     nmtcsv = nmt.csv()
     nmtdict = nmt.analyse_nmap_xml_scan()
