@@ -44,17 +44,17 @@ def httpenum(targets, ports):
         targetformat, targetformat, targetformat)  # TODO remttre top 200
     results = subprocess.check_output(TCPSCAN, shell=True)
     print "***************************************************************"
-    print "TCP RESULTS:" + results
+    print "TCPRESULTS:" + results
     print "***************************************************************"
     udpresults = subprocess.check_output(UDPSCAN, shell=True)
-    print "UDP RESULTS:" + udpresults
+    print "UDPRESULTS:" + udpresults
     print "***************************************************************"
     lines = results.split("\n")
 
 
 # subprocess.call(DIRB, shell=True)
 
-# TODO  smbenum
+# TODO  add port suppport
 
 
 def smtpenum(targets, ports):
@@ -91,7 +91,7 @@ def ftpenum(targets, ports):
     f.write(results)
     f.close()
 
-    print "Performing HYDRA Bruteforce against: " + targetformat
+    print "PERFORMING HYDRA BF AGAINST" + targetformat
     HYDRA = "hydra -L /home/toxic/git/oscp/paillasse/users.txt -P /home/toxic/git/oscp/paillasse/passwords.txt -f -o /tmp/results/{0]_ftphydra.txt -u {1} {21] ftp".format(
         targetformat, targetformat, portformat)
     subprocess.call(HYDRA,shell=True)
@@ -175,11 +175,11 @@ def do_scan(targets):
 if __name__ == "__main__":
     #    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
     if os.path.isdir("/tmp/results") == True:
-        print "/tmp/results exists."
+        print "/tmp/results exists"
     else:
         os.mkdir("/tmp/results", 0777)
     if os.path.isdir("/tmp/results/nmap") == True:
-        print "/tmp/results/nmap exists."
+        print "/tmp/results/nmap exists"
     else:
         os.mkdir("/tmp/results/nmap", 0777)
     f = open(sys.argv[1], 'r')

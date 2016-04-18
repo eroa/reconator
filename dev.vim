@@ -8,13 +8,32 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 workspace/autoenum/modules/nmap.py
-badd +33 workspace/reconator/core/reconatoor-dev.py
-badd +0 workspace/reconator/core/reconatoorlib-dev.py
+badd +48 git/reconator/core/reconatoor-dev.py
+badd +0 git/reconator/core/tests/grep-dev-simple.py
 argglobal
 silent! argdel *
 set stal=2
-edit workspace/autoenum/modules/nmap.py
+edit git/reconator/core/reconatoor-dev.py
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=expr
+setlocal fde=pymode#folding#expr(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 48 - ((15 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+48
+normal! 0
+lcd ~/git/reconator/core
+tabedit ~/git/reconator/core/tests/grep-dev-simple.py
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -28,56 +47,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 50)
+let s:l = 1 - ((0 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/workspace/autoenum/modules
-tabedit ~/workspace/reconator/core/reconatoor-dev.py
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 33 - ((31 * winheight(0) + 24) / 48)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-33
-normal! 083|
-lcd ~/workspace/reconator/core
-tabedit ~/workspace/reconator/core/reconatoorlib-dev.py
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 58 - ((29 * winheight(0) + 25) / 50)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-58
-normal! 050|
-lcd ~/workspace/reconator/core
-tabnext 3
+lcd ~/git/reconator/core/tests
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

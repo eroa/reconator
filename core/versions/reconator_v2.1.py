@@ -17,7 +17,6 @@ def multProc(targetin, scanip, port):
     return
 
 
-
 def httpenum(targets, ports):
     if os.path.isdir("/tmp/results/nmap") == True:
         print "/tmp/results/nmap exists"
@@ -44,17 +43,17 @@ def httpenum(targets, ports):
         targetformat, targetformat, targetformat)  # TODO remttre top 200
     results = subprocess.check_output(TCPSCAN, shell=True)
     print "***************************************************************"
-    print "TCP RESULTS:" + results
+    print "TCPRESULTS:" + results
     print "***************************************************************"
     udpresults = subprocess.check_output(UDPSCAN, shell=True)
-    print "UDP RESULTS:" + udpresults
+    print "UDPRESULTS:" + udpresults
     print "***************************************************************"
     lines = results.split("\n")
 
 
 # subprocess.call(DIRB, shell=True)
 
-# TODO  smbenum
+# TODO  add port suppport
 
 
 def smtpenum(targets, ports):
@@ -74,27 +73,8 @@ def sshenum(targets, ports):
 
 
 def ftpenum(targets, ports):
-    if os.path.isdir("/tmp/results/nmap") == True:
-        print "/tmp/results/nmap exists"
-    else:
-        os.mkdir("/tmp/results/nmap", 0777)
-    print("FTP scriptscan ")
-    targetformat = str(targets)
-    portformat = str(ports)
     print "ftp on " + targets + ":" + ports
-    print "performing FTPscript scan on target"
-    FTPSCAN = "nmap -sV -Pn -vv -p {0} --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221 -oA '/tmp/results/nmap/#{1}_ftp.nmap' {2}" % (
-    portformat, targetformat, targetformat)
-    results = subprocess.check_output(FTPSCAN, shell=True)
-    outfile = "/tmp/results/" + targetformat + "_ftprecon.txt"
-    f = open(outfile, "w")
-    f.write(results)
-    f.close()
 
-    print "Performing HYDRA Bruteforce against: " + targetformat
-    HYDRA = "hydra -L /home/toxic/git/oscp/paillasse/users.txt -P /home/toxic/git/oscp/paillasse/passwords.txt -f -o /tmp/results/{0]_ftphydra.txt -u {1} {21] ftp".format(
-        targetformat, targetformat, portformat)
-    subprocess.call(HYDRA,shell=True)
 
 def torenum(targets, ports):
     print "tor on " + targets + ":" + ports
@@ -105,17 +85,12 @@ def msasql(targets, ports):
 
 
 def writeTargets(targets, ports):
-    d = []
-    print "WRITE TARGET"
+    print "CALL SCRIPT"
     text = "targets: " + targets + "\tports:" + ports
     f = open("/tmp/results/writeTargets_{0}_{1}".format(targets, ports), "w")
     f.write(text)
     f.close()
-    os.system("cat /tmp/results/write* >> /tmp/results/targetsscanned")
-    # t = open("/tmp/results/all_targ_n_port.txt", "w")
-    # d.append(targets + ":" + ports)
-    # t.writelines(d)
-    # t.close()
+
 
 def parsinglaunch(nm):
     for host in nm.all_hosts():
@@ -146,6 +121,7 @@ def parsinglaunch(nm):
                     multProc(mssqlenum, str(host), str(port))
                 print('#######################  nm host: {0} port: {1} '.format(host, port))
 
+
 # start a new nmap scan on localhost with some specific options
 def do_scan(targets):
     parsed = None
@@ -155,9 +131,10 @@ def do_scan(targets):
     # nm.scan(hosts=targets,
     # arguments='-sV -sS -vvv -Pn -oN "/tmp/results/reconator_first_%s"' % targets, sudo=True)
 
-    nmt.scan(hosts=targets, arguments="-vv -Pn   -sS -sV -sC  -oN '/tmp/results/nmap/first_{0}.nmap' {1} ".format(targetformat, targetformat), sudo=True)
+    nmt.scan(hosts=targets, arguments="nmap -vv -Pn  -sC -sS -T 4  -oN '/tmp/results/nmap/%s.nmap'%s " % (
+        targetformat, targetformat), sudo=True)
     nmu.scan(hosts=targets,
-             arguments="-vv -Pn -A -sC -sU -T 4 --top-ports 1 -oN '/tmp/results/nmap/first_{0}_UDP.nmap' {1}".format(
+             arguments="nmap -vv -Pn -A -sC -sU -T 4 --top-ports 1 -oN '/tmp/results/nmap/%sU.nmap' %s" % (
                  targetformat, targetformat), sudo=True)
     nmtxml = nmt.get_nmap_last_output()
     nmtcsv = nmt.csv()
@@ -172,14 +149,15 @@ def do_scan(targets):
 
     return parsed
 
+
 if __name__ == "__main__":
     #    print(" RECONATOR : usage " + %s + "ip_list.txt" % sys.argv[0])**
     if os.path.isdir("/tmp/results") == True:
-        print "/tmp/results exists."
+        print "/tmp/results exists"
     else:
         os.mkdir("/tmp/results", 0777)
     if os.path.isdir("/tmp/results/nmap") == True:
-        print "/tmp/results/nmap exists."
+        print "/tmp/results/nmap exists"
     else:
         os.mkdir("/tmp/results/nmap", 0777)
     f = open(sys.argv[1], 'r')
